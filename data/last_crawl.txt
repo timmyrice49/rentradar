@@ -1,32 +1,41 @@
-last_run: 2026-08-31T18:39:39Z
-commit: d653b64c1ee7c5a62e99ea837f393929b65fb343
+last_run: 2026-08-31T18:54:43Z
+commit: a74f4c0ada3d4b68f4a41381724923aca93d7849
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         y   341    12     0    12      0
+nybits                         y   340     3     0     4      0
 tfcornerstone                  y   124     0     0     0     26
 stuytown                       y   100     0     8     0      0
 rockrose                       y    53     0     0     0      0
 
-geocoder: 653 cached, 6 fetched, 0 failed, 0 below threshold
+geocoder: 657 cached, 1 fetched, 0 failed, 0 below threshold
 
-pairs found      45  (37 on an exact rent match)
+pairs found      47  (39 on an exact rent match)
 newly recorded   2
-already measured 43
+already measured 45
 unusable         0
 implausible      0  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-  -357.1h  censored:present-at-first-crawl building+beds+price          47-05 CENTER BOULEVARD, Long Islan #2904 $4,795
-  -357.1h  censored:present-at-first-crawl building+beds+price          47-05 CENTER BOULEVARD, Long Islan #1513 $4,680
+     1.5h  first_seen->first_seen   building+beds+price          47-05 CENTER BOULEVARD, Long Islan #212 $4,365
+     0.5h  first_seen->first_seen   building+beds+price          41 RIVER TERRACE, New York, NY, US #2607 $6,945
 
 == lead time ==
-  measured               0
-  pending                640
+  measured               2
+  pending                641
   excluded_mixed_basis   45
-  note                   45 pairs found, none of them usable yet -- either the two sides used different clocks, or the listing was already on the market when this database started watching. Both resolve themselves as the crawler accumulates history; neither is fixable in code.
+  median_hours           1.0
+  mean_hours             1.0
+  p10_hours              0.5
+  p90_hours              1.5
+  share_ahead            1.0
+  share_ahead_24h        0.0
+  share_ahead_72h        0.0
+  basis                  {'first_seen->first_seen': 2}
+  vs                     {'nybits': 47}
+  caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
 Calibrate against a manual StreetEasy sample before making the stronger claim.
