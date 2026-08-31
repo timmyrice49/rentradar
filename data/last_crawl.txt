@@ -1,5 +1,5 @@
-last_run: 2026-08-31T17:09:45Z
-commit: 3e71818310b99a8273cc1c90f21912892144f904
+last_run: 2026-08-31T17:24:58Z
+commit: 01df290ae699c122c93cbe78be7f9d142dcba27f
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
@@ -8,36 +8,19 @@ nyc_housing_connect            y    31     0     0     0      3
 nybits                         y   341     0     0     0      0
 tfcornerstone                  y   124     0     0     0     26
 stuytown                       y   100     0     8     0      0
-rockrose                       y    51     0     0     0      0
+rockrose                       y    52     1     0     0      0
 
-geocoder: 657 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 658 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      43  (35 on an exact rent match)
-newly recorded   43
-already measured 0
+newly recorded   0
+already measured 43
 unusable         0
 implausible      0  (> 60d apart -- probably not the same apartment)
 
-     lead  basis                    match                        listing
-     0.2h  censored:present-at-first-crawl building+beds+price          645 EAST 14 STREET, New York, NY,  #3D $5,187
-     0.2h  censored:present-at-first-crawl building+beds+price          605 EAST 14 STREET, New York, NY,  #0ME $5,212
-     0.2h  censored:present-at-first-crawl building+beds+price          245 AVENUE C, New York, NY, USA #1E $5,275
-     0.2h  censored:present-at-first-crawl building+beds+price          655 EAST 14 STREET, New York, NY,  #7C $5,327
-     0.2h  censored:present-at-first-crawl building+beds+price          647 EAST 14 STREET, New York, NY,  #4D $5,330
-     0.2h  censored:present-at-first-crawl building+beds+near-price     655 EAST 14 STREET, New York, NY,  #3B $5,392
-     0.2h  censored:present-at-first-crawl building+beds+near-price     540 EAST 20 STREET, New York, NY,  #0ME $5,361
-     0.2h  censored:present-at-first-crawl building+beds+near-price     16 STUYVESANT OVAL, New York, NY,  #11H $5,397
-     0.2h  censored:present-at-first-crawl building+beds+near-price     4540 CENTER BOULEVARD, Long Island #2306 $3,515
-    -0.0h  censored:present-at-first-crawl building+beds+price          4720 CENTER BOULEVARD, Long Island #207 $3,465
-    -0.0h  censored:present-at-first-crawl building+beds+price          4615 CENTER BOULEVARD, Long Island #301 $3,465
-    -0.0h  censored:present-at-first-crawl building+beds+price          200 WATER STREET, New York, NY, US #708 $4,795
-    -0.0h  censored:present-at-first-crawl building+beds+price          43-25 HUNTER STREET, Long Island C #3519W $3,769
-    -0.0h  censored:present-at-first-crawl building+beds+price          47-05 CENTER BOULEVARD, Long Islan #1402 $3,820
-    -0.0h  censored:present-at-first-crawl building+beds+price          200 WATER STREET, New York, NY, US #515 $7,000
-
 == lead time ==
   measured               0
-  pending                628
+  pending                629
   excluded_mixed_basis   43
   note                   43 pairs found, none of them usable yet -- either the two sides used different clocks, or the listing was already on the market when this database started watching. Both resolve themselves as the crawler accumulates history; neither is fixable in code.
 
