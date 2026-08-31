@@ -1,0 +1,25 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt beautifulsoup4
+      # Every suite runs offline: HTTP is stubbed and no credentials are
+      # needed, so CI never depends on a landlord's site being up.
+      - name: Run test suites
+        run: |
+          set -e
+          for t in tests/test_*.py; do
+            echo "== $t"
+            python "$t"
+          done

@@ -1,0 +1,123 @@
+name,domain,tier,verdict,robots,listings_url,note
+Stonehenge NYC,stonehengenyc.com,1,JSONLD,allow,https://stonehengenyc.com/apartments,10 listing nodes of 70 declared (rest client-side)
+UDR,udr.com,1,JSONLD,allow,https://www.udr.com/austin-apartments/,6 listing nodes
+Benchmark Real Estate Group,benchmarkreg.com,3,PMS,allow,https://benchmarkreg.com/properties/,AppFolio @ https://cisrealestate.appfolio.com/connect
+Brodsky Organization,brodsky.com,1,PMS,allow,https://www.brodsky.com/rentals/downtown-brooklyn/city-tower,Yardi RentCafe (ref only) (fingerprint only)
+Bronstein Properties,bronsteinproperties.com,2,PMS,allow,https://bronsteinproperties.com/,Yardi RentCafe @ https://bronsteinproperties.securecafe.com/residentservices/apartments
+BRP Companies,brpcompanies.com,2,PMS,allow,https://www.brpcompanies.com/portfolio/,Yardi RentCafe @ https://fulton-street-development-llc-rentcafewebsite.securecafe.com/r
+Cayuga Capital Management,cayugacapital.com,3,PMS,allow,https://www.cayugacapital.com/,AppFolio @ https://popsupkeep.appfolio.com
+Dermot Company,dermotcompany.com,1,PMS,allow,https://www.dermotcompany.com/state/new-york,Yardi RentCafe @ https://preserveatdeercreek-living.securecafe.com/residentservices/pal
+Heatherwood,heatherwood.com,2,PMS,allow,https://heatherwood.com/home,Yardi RentCafe @ https://heatherwood.securecafe.com/residentservices/apartmentsforrent/
+Related Affordable,relatedaffordable.com,2,PMS,allow,https://www.relatedaffordable.com/our-communities,Yardi RentCafe @ https://www.rentcafe.com/residentservices/apartmentsforrent/userlogin.
+Riseboro Community Partnership,riseboro.org,3,PMS,allow,https://riseboro.org/program/rental-assistance-program-erap/,Yardi RentCafe @ https://riseboro.securecafe.com/residentservices/apartmentsforrent/use
+RXR Realty,rxrrealty.com,1,PMS,allow,https://rxr.com/availabilities/commercial/,Yardi RentCafe @ https://www.icsecurecafe.com/investorportal/investorservices/login.asp
+Solil Management,solil.com,1,PMS,allow,https://www.solil.com/residential/,On-Site @ https://www.on-site.com/apply/property/218747
+Windsor Communities,windsorcommunities.com,2,PMS,allow,https://www.windsorcommunities.com/find-apartments/,Yardi RentCafe @ https://cdn.rentcafe.com
+WinnCompanies,winncompanies.com,2,PMS,allow,https://www.winncompanies.com/,Yardi RentCafe (ref only) (fingerprint only)
+9300 Realty,9300realty.com,3,SPA,none,https://9300realty.com/apartments,26KB shell — run discover
+A&E Real Estate,aemgmt.com,1,SPA,none,https://aemgmt.com/,13KB shell — run discover
+Algin Management,alginmanagement.com,2,SPA,allow,https://alginmanagement.com/apartments,0KB shell — run discover
+Arker Companies,arkercompanies.com,2,SPA,allow,https://www.arkercompanies.com/,16KB shell — run discover
+Beam Living,beamliving.com,1,SPA,none,https://www.beamliving.com/apartments,32KB shell — run discover
+Bozzuto Management,bozzuto.com,1,SPA,allow,https://www.bozzuto.com/apartments,20KB shell — run discover
+Bridgeline Property Management,bridgelinepm.com,3,SPA,allow,https://bridgelinepm.com/apartments,0KB shell — run discover
+Clipper Equity,clipperequity.com,2,SPA,none,https://clipperequity.com/,34KB shell — run discover
+Douglas Elliman Property Management,ellimanpm.com,2,SPA,allow,https://www.ellimanpm.com/w/index,31KB shell — run discover
+Durst Organization,durst.org,1,SPA,allow,https://www.durst.org/properties/residential,12KB shell — run discover
+Extell Development,extell.com,1,SPA,allow,https://extell.com/apartments,4KB shell — run discover
+Gotham Organization,gothamorg.com,1,SPA,allow,https://gothamorg.com/,24KB shell — run discover
+Halcyon Management Group,halcyonmgt.com,3,SPA,allow,https://halcyonmgt.com/apartments,26KB shell — run discover
+Hope Street Capital,hopestreetcapital.com,3,SPA,allow,https://www.hugedomains.com/,8KB shell — run discover
+Jonathan Rose Companies,rosecompanies.com,2,SPA,allow,https://www.rosecompanies.com/developing-communities-opportunity/,37KB shell — run discover
+Lalezarian Properties,lalezarian.com,2,SPA,none,https://www.lalezarian.com/availability,26KB shell — run discover
+Manhattan Skyline Management,manhattanskyline.com,1,SPA,allow,https://manhattanskyline.com/rentals,39KB shell — run discover
+Olnick Organization,olnick.com,2,SPA,allow,https://www.olnick.com/projects/residential,8KB shell — run discover
+Omni New York,omninewyork.com,2,SPA,allow,https://omninewyork.com/apartments,0KB shell — run discover
+Parkoff Organization,parkoff.com,2,SPA,allow,https://www.parkoff.com/,2KB shell — run discover
+Pinnacle City Living,pinnaclecityliving.com,2,SPA,allow,https://pinnaclecityliving.com/apartments,0KB shell — run discover
+Rabsky Group,rabskygroup.com,3,SPA,allow,https://rabskygroup.com/apartments,0KB shell — run discover
+Royal Realty,royalrealtycorp.com,3,SPA,none,https://royalrealtycorp.com/,0KB shell — run discover
+Silverstone Property Group,silverstonepg.com,3,SPA,none,https://silverstonepg.com/,12KB shell — run discover
+Skyline Developers,skylinedevelopers.com,2,SPA,allow,https://skylinedevelopers.com/apartments,0KB shell — run discover
+Solow Residential,solowresidential.com,2,SPA,allow,https://www.solovievgroup.com/,36KB shell — run discover
+Tavros Capital,tavroscapital.com,3,SPA,allow,https://www.tavroscapital.com/our-portfolio/251-douglass-street/,34KB shell — run discover
+TF Cornerstone,tfc.com,1,SPA,allow,https://tfc.com/apartments,5KB shell — run discover
+The Georgetown Company,thegeorgetowncompany.com,3,SPA,allow,https://georgetownco.com/,27KB shell — run discover
+Toll Brothers City Living,tollbrotherscityliving.com,2,SPA,allow,https://www.tollbrotherscityliving.com/portfolio,25KB shell — run discover
+Two Trees Management,twotreesny.com,1,SPA,allow,https://twotreesny.com/apartments,4KB shell — run discover
+Zeckendorf Development,zeckendorf.com,3,SPA,allow,https://zeckendorf.com/apartments,0KB shell — run discover
+Adam America Real Estate,adamamerica.com,3,HTML,allow,https://www.adamamerica.com/listings,"715KB, no structured data"
+Akam Living Services,akam.com,3,HTML,allow,https://akam.com/about-us/,"204KB, no structured data"
+AvalonBay,avaloncommunities.com,1,HTML,allow,https://www.avaloncommunities.com:443/ava-apartments/,"523KB, no structured data"
+Avery Hall Investments,averyhall.com,3,HTML,allow,https://averyhall.com/personal/rental-property/,"87KB, no structured data"
+Bettina Equities,bettinaequities.com,2,HTML,allow,https://www.bettinaequities.com/availabilities/,"112KB, no structured data"
+Breaking Ground,breakingground.org,3,HTML,allow,https://www.breakingground.org/,"207KB, no structured data"
+Brookfield Properties,brookfieldproperties.com,1,HTML,allow,https://www.bgre.com/,"89KB, no structured data"
+Brooklyn Home Company,thebrooklynhomecompany.com,3,HTML,allow,https://thebrooklynhomecompany.com/,"173KB, no structured data"
+Camber Property Group,camberpg.com,2,HTML,allow,https://camberpg.com/,"96KB, no structured data"
+Cammeby's International,cammebys.com,1,HTML,allow,https://cammebys.com/listings/,"446KB, no structured data"
+Carmel Partners,carmelpartners.com,2,HTML,allow,https://www.carmelpartners.com/,"65KB, no structured data"
+Charney Companies,charneycompanies.com,2,HTML,allow,https://charneycompanies.com/,"55KB, no structured data"
+Clinton Management,clintonmanagement.com,2,HTML,allow,https://www.clintonmanagement.com/availabilities/market-rate/,"49KB, no structured data"
+Criterion Group,criteriongroup.com,2,HTML,allow,https://www.criteriongroup.com/properties,"125KB, no structured data"
+Douglaston Development,douglastondevelopment.com,2,HTML,allow,https://www.douglastondevelopment.com/availabilities/,"55KB, no structured data"
+Empire State Realty Trust,esrtreit.com,3,HTML,allow,https://www.esrtreit.com/properties/office/empire-state-building1/,"236KB, no structured data"
+Fairstead,fairstead.com,2,HTML,allow,https://fairstead.com/,"128KB, no structured data"
+Fetner Properties,fetner.com,2,HTML,allow,https://www.fetner.com/,"69KB, no structured data"
+FirstService Residential,fsresidential.com,2,HTML,allow,https://www.fsresidential.com/corporate/why-firstservice-residential/,"127KB, no structured data"
+Glenwood Management,glenwoodnyc.com,1,HTML,allow,https://www.glenwoodnyc.com/search-result/,"650KB, no structured data"
+Greystar,greystar.com,1,HTML,allow,https://www.greystar.com/s/charlotte-nc,"2113KB, no structured data"
+Greystone Property Management,greystoneproperty.com,3,HTML,none,https://greystoneproperty.com/apartments,"129KB, no structured data"
+Habyt,habyt.com,2,HTML,allow,https://habyt.com/,"117KB, no structured data"
+Kushner Companies,kushner.com,2,HTML,allow,https://kushner.com/properties/,"169KB, no structured data"
+L+M Development Partners,lmdevpartners.com,1,HTML,allow,https://lmdp.com/,"68KB, no structured data"
+LCOR,lcor.com,2,HTML,allow,https://www.lcor.com/portfolio,"559KB, no structured data"
+LeFrak,lefrak.com,1,HTML,none,https://www.lefrak.com/,"118KB, no structured data"
+Marx Realty,marxrealty.com,3,HTML,allow,https://marxrealty.com/portfolio/,"85KB, no structured data"
+MDG Design and Construction,mdgny.com,3,HTML,allow,https://mdgny.com/,"120KB, no structured data"
+Metro Management Development,metromanagement.com,3,HTML,allow,https://metromanagement.com/,"205KB, no structured data"
+Monarch Realty Holdings,monarchrealtyholdings.com,3,HTML,allow,https://www.monarchrealtyholdings.com/availability,"64KB, no structured data"
+Naftali Group,naftaligroup.com,2,HTML,none,https://naftaligroup.com/residential/,"154KB, no structured data"
+Ogden CAP Properties,ogdencapproperties.com,1,HTML,allow,https://www.ogdencapproperties.com/property-listing,"62KB, no structured data"
+Pan Am Equities,panamequities.com,2,HTML,allow,https://www.panamequities.com/,"287KB, no structured data"
+Phipps Houses,phippsny.org,1,HTML,allow,https://www.phippsny.org/,"139KB, no structured data"
+RedSky Capital,redskycapital.com,3,HTML,allow,https://www.redskycapital.com/portfolio-of-properties,"118KB, no structured data"
+Related Companies,related.com,1,HTML,allow,https://www.related.com/residential,"185KB, no structured data"
+Related Rentals,relatedrentals.com,1,HTML,allow,https://www.relatedrentals.com/search,"203KB, no structured data"
+Rockrose Development,rockrose.com,1,HTML,none,https://rockrose.com/availabilities/,"339KB, no structured data"
+Rose Associates,rosenyc.com,1,HTML,allow,https://rosenyc.com/communities/,"387KB, no structured data"
+Rudin Management,rudin.com,1,HTML,allow,https://www.rudin.com/all-availabilities,"67KB, no structured data"
+Settlement Housing Fund,settlementhousingfund.org,3,HTML,allow,https://www.settlementhousingfund.org/marketing-leasing/,"261KB, no structured data"
+Silverstein Properties,silversteinproperties.com,1,HTML,allow,https://www.silversteinproperties.com/portfolio-properties,"112KB, no structured data"
+Stellar Management,stellarmanagement.com,1,HTML,allow,https://www.stellarmanagement.com/availabilities,"368KB, no structured data"
+StuyTown Property Services,stuytown.com,1,HTML,none,https://www.stuytown.com/nyc-apartments-for-rent,"185KB, no structured data"
+Time Equities,timeequities.com,2,HTML,allow,https://timeequities.com/departments/residential,"116KB, no structured data"
+Tredway,tredway.com,3,HTML,allow,https://www.tredway.com/our-properties,"55KB, no structured data"
+Veris Residential,verisresidential.com,2,HTML,allow,https://verisresidential.com/search-results,"197KB, no structured data"
+Witkoff Group,witkoff.com,3,HTML,allow,https://www.witkoff.com/portfolio,"367KB, no structured data"
+Alchemy Properties,alchemyproperties.com,3,BLOCKED,,,unreachable (OSError)
+Alma Realty,almarealtycorp.com,2,BLOCKED,,,unreachable (OSError)
+Equity Residential,equityapartments.com,1,BLOCKED,,,HTTP 403 on homepage
+Fortis Property Group,fortispg.com,2,BLOCKED,,,unreachable (OSError)
+Harlington Realty,harlingtonrealty.com,3,BLOCKED,,,unreachable (OSError)
+Hudson Companies,hudsoncos.com,2,BLOCKED,,,unreachable (ConnectionResetError)
+Icon Realty Management,iconrealtynyc.com,2,BLOCKED,,,unreachable (OSError)
+Jakobson Properties,jakobson.com,2,BLOCKED,,,unreachable (ConnectionResetError)
+JEMB Realty,jemb.com,3,BLOCKED,,,unreachable (ConnectionResetError)
+Kings and Queens Leasing,kingsandqueensleasing.com,3,BLOCKED,,,unreachable (OSError)
+Lincoln Property Company,lincolnapts.com,2,BLOCKED,,,HTTP 403 on homepage
+Moinian Group,moiniangroup.com,1,BLOCKED,,,unreachable (ConnectionResetError)
+Monadnock Development,monadnockdevelopment.com,3,BLOCKED,,,unreachable (ConnectionResetError)
+Muss Development,mussdevelopment.com,2,BLOCKED,,,unreachable (OSError)
+Nelson Management Group,nelsonmgt.com,2,BLOCKED,,,unreachable (HTTP 404)
+Newport Management,newportmgmt.com,3,BLOCKED,,,unreachable (OSError)
+Related Argent,relatedargent.com,3,BLOCKED,,,HTTP 403 on homepage
+Sapir Organization,sapirorg.com,3,BLOCKED,,,unreachable (ConnectionResetError)
+Sentinel Real Estate,sentinelcorp.com,2,BLOCKED,,,HTTP 403 on homepage
+Simon Baron Development,simonbaron.com,2,BLOCKED,,,unreachable (HTTP 404)
+Sky Management,skymanagementny.com,3,BLOCKED,,,unreachable (OSError)
+Slate Property Group,slatepropertygroup.com,2,BLOCKED,,,unreachable (OSError)
+Sugar Hill Capital Partners,sugarhillcp.com,3,BLOCKED,,,unreachable (OSError)
+Tishman Speyer,tishmanspeyer.com,1,BLOCKED,,,HTTP 403 on homepage
+Trinity Place Holdings,trinityplaceholdings.com,3,BLOCKED,,,unreachable (ConnectionResetError)
+Wavecrest Management,wavecrestmgt.com,2,BLOCKED,,,unreachable (OSError)

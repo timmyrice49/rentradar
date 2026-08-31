@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Local crawl state. The canonical database is restored from CI cache and
+# backed up daily to data/ -- a working copy here should never be committed.
+*.db
+*.db-wal
+*.db-shm
+/tmp/

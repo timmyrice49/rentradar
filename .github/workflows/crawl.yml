@@ -1,0 +1,106 @@
+# The deterministic half of the automation.
+#
+# Crawling on a cadence is mechanical work: fetch, diff, alert, record. It
+# needs no judgment, so it does not need a model. GitHub Actions runs it free
+# on public repos, and keeping it here means the daily manager agent spends
+# its tokens on the parts that actually need reasoning.
+#
+# State: `first_seen` is the number the whole product rests on, so the
+# database must survive between runs. Hot state lives in the Actions cache
+# (fast, but evictable); a daily backup is committed to data/ so an eviction
+# costs at most a day of history rather than the entire lead-time ledger.
+
+name: crawl
+
+on:
+  schedule:
+    # Every 15 minutes. The affordable end of the NYC market clears in under
+    # 48 hours, so this cadence is the product, not a nicety.
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  # Two crawls writing one SQLite file corrupts it. Never run in parallel,
+  # and drop a queued run rather than piling up.
+  group: crawl
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt beautifulsoup4
+
+      - name: Restore crawl database
+        uses: actions/cache/restore@v4
+        with:
+          path: rentradar.db
+          key: rentradar-db-${{ github.run_id }}
+          restore-keys: |
+            rentradar-db-
+
+      - name: Seed from last committed backup if cache was empty
+        run: |
+          if [ ! -f rentradar.db ] && [ -f data/rentradar.db ]; then
+            echo "cache miss -- restoring daily backup"
+            cp data/rentradar.db rentradar.db
+          fi
+
+      - name: Crawl
+        id: crawl
+        # A single broken source must not fail the run; the CLI already
+        # reports per-source status and skips the off-market sweep for any
+        # source that returns suspiciously little.
+        continue-on-error: true
+        run: python -m rentradar.cli crawl | tee crawl.log
+
+      - name: Record status
+        run: |
+          mkdir -p data
+          python -m rentradar.cli stats > data/status.txt 2>/dev/null || true
+          {
+            echo "last_run: $(date -u +%FT%TZ)"
+            echo "commit: ${{ github.sha }}"
+            echo
+            sed -n '/^source/,$p' crawl.log
+          } > data/last_crawl.txt
+
+      - name: Save crawl database
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: rentradar.db
+          key: rentradar-db-${{ github.run_id }}
+
+      - name: Commit status (and a daily database backup)
+        run: |
+          git config user.name  "rentradar-bot"
+          git config user.email "rentradar-bot@users.noreply.github.com"
+          # Back the database up once a day, not every 15 minutes -- 96 binary
+          # commits a day would bloat the repo for no benefit.
+          if [ "$(date -u +%H%M)" \< "0015" ] || [ ! -f data/rentradar.db ]; then
+            cp rentradar.db data/rentradar.db || true
+          fi
+          git add -A data/
+          git diff --cached --quiet || \
+            git commit -m "crawl status $(date -u +%FT%TZ) [skip ci]"
+          git push || echo "nothing to push"
+
+      - name: Fail the run if every source broke
+        run: |
+          # One dead landlord site is normal. All of them at once means the
+          # crawler itself is broken, and that should page someone.
+          if grep -qE '^\S+ +n ' crawl.log && ! grep -qE '^\S+ +y ' crawl.log; then
+            echo "::error::every source failed"
+            exit 1
+          fi

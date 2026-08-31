@@ -1,0 +1,468 @@
+# RentRadar source registry.
+#
+# Two sections:
+#   sources         adapters that run on every crawl
+#   discover_queue  ranked targets to turn into adapters, from tools/survey.py
+#
+# Ordering principle: rank by lead time over the public aggregators, not by
+# inventory size. A landlord site with 70 units that posts four days early is
+# worth more than a feed of 40,000 that posts simultaneously.
+#
+# `id` is permanent -- off-market detection is scoped by it, so renaming a
+# source orphans everything it ever found.
+
+sources:
+
+  # --- verified working ---------------------------------------------------
+
+  - type: jsonld
+    id: stonehenge
+    operator: Stonehenge NYC
+    enabled: true
+    urls:
+      - https://www.stonehengenyc.com/apartments
+    borough_hint: Manhattan     # per-listing locality in the markup wins
+    no_fee: true
+    min_expected: 8
+    notes: >
+      The only operator in a 122-site survey that publishes unit-level
+      schema.org markup: address, beds, sqft and price straight in the page
+      source. 10 of its 70 units are exposed this way; the rest load
+      client-side, so pair this with a discover run against the same page.
+
+  - type: housing_connect
+    id: nyc_housing_connect
+    enabled: true
+    only_open: true
+    min_expected: 1
+    notes: >
+      NYC Open Data vy5i-a666. Income-restricted lotteries: genuinely
+      affordable, public, and structurally absent from StreetEasy. Building
+      level rather than unit level. Set app_token to lift Socrata's
+      anonymous rate limit. Status values are Active / Tenant Selection /
+      All Units Filled / Closed -- only "Active" still takes applications.
+
+  - type: nybits
+    id: nybits
+    enabled: true
+    max_pages: 24
+    min_expected: 20
+    notes: >
+      NYC no-fee aggregator. Server-rendered, robots-allowed, stable per-listing
+      ids, and it republishes inventory from operators whose own sites are
+      unreadable JavaScript shells -- Rose Associates, Beam Living, Kings and
+      Queens Leasing and Halcyon Management all surface here, and three of
+      those the direct survey could not reach at all. Not upstream of anything,
+      so it does not serve the lead-time thesis; it is scaffolding and ground
+      truth. Publishes no unit numbers, so identity falls back to the site's
+      own listing id. Carries two fields worth more than the rent: a "posted"
+      freshness stamp and a net-effective-rent flag.
+
+  - type: reddit
+    id: reddit_nyc
+    enabled: false
+    contact: set-your-contact-here
+    min_expected: 0
+    notes: >
+      Disabled until you register a script app at reddit.com/prefs/apps and
+      set REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET. This is the lawful version
+      of the Facebook-housing-group idea: same kind of small-landlord, sublet
+      and lease-break inventory, but through a documented OAuth API with a
+      published rate limit instead of automated access to private groups.
+      Free-text prose, so precision is low by construction -- most posts are
+      people seeking rather than offering, addresses are usually just a
+      neighborhood, and scams are common in this channel. Every row is tagged
+      unverified and carries a link to the original post. Treat the output as
+      leads for a human, never as inventory.
+
+  # --- discovered endpoints (headless discovery, field maps verified) -----
+
+  - type: jsonapi
+    id: tfcornerstone
+    operator: TF Cornerstone
+    enabled: true
+    url: https://cdn.tfc.com/tfc-com/initial-data.json
+    min_expected: 30
+    no_fee: true
+    fields:
+      address: Address
+      unit_raw: Apartment
+      price: GrossRent
+      beds: NumBedrooms
+      baths: NumBathrooms
+      available_on: Availability
+      borough: Neighborhood
+      source_ref: Id
+      detail_url: WebUrl
+    notes: >
+      Found by headless discovery; the site itself is a 5KB shell the survey
+      could not read at all. 98 units with real apartment numbers. GrossRent
+      is deliberately chosen over Price/PriceBroker -- it is the number before
+      concessions, and MonthsFree is carried separately. The payload also has
+      DateListed, a publisher-supplied timestamp worth wiring into the
+      lead-time ledger later.
+
+  - type: jsonapi
+    id: stuytown
+    operator: StuyTown Property Services
+    enabled: true
+    url: https://units.stuytown.com/api/units?Order=low-price&page=0&itemsOnPage=100&PropertyName=Stuyvesant+Town_Peter+Cooper+Village
+    min_expected: 20
+    borough_hint: Manhattan
+    fields:
+      address: building.address
+      unit_raw: unitNumber
+      price: price
+      beds: bedrooms
+      baths: bathrooms
+      sqft: sqft
+      available_on: availableDate
+      source_ref: unitSpk
+    notes: >
+      The largest single rental campus in the city, ~11,000 units. Per-building
+      street addresses, real unit numbers, square footage and an availability
+      date. itemsOnPage is raised to 100 from the 21 the site requests; page=0
+      only, so this takes the cheapest 100 rather than everything -- add
+      pagination when you care about the full campus.
+
+  - type: htmlindex
+    id: rockrose
+    operator: Rockrose Development
+    enabled: true
+    index_urls:
+      - https://rockrose.com/availabilities/
+    link_pattern: https://rockrose\.com/listing/[\w-]+/
+    max_details: 60
+    min_expected: 10
+    notes: >
+      Found only after headless discovery failed on it twice -- there is no XHR
+      to capture because the site renders server-side. The availability index
+      carries 52 unit links in its static source, and each unit page has the
+      address and apartment number in its h1 plus beds, baths, rent and any
+      concession in the body. Cheapest source type in the system: plain HTTP,
+      no browser, no endpoint to go stale. Borough comes from the ZIP, not from
+      page text -- the footer says "Manhattan" on every page, which was tagging
+      LIC and Brooklyn units as Manhattan and misdirecting the geocoder.
+
+  # --- building index, not inventory --------------------------------------
+
+  - type: jsonld
+    id: udr_nyc_index
+    operator: UDR
+    enabled: false
+    urls:
+      - https://www.udr.com/new-york-city-apartments/
+    borough_hint: Manhattan
+    min_expected: 1
+    notes: >
+      Disabled deliberately. UDR publishes clean schema.org markup, but the
+      NYC page is an index of 5 buildings carrying only name and URL -- no
+      address, no price -- and the per-building pages expose nothing further.
+      The adapter correctly returns zero rows. Keep it here as the worked
+      example of a building index: useful as a discover seed, useless as a
+      source. Enable only if UDR ever adds unit data to the markup.
+
+# --- sources deliberately NOT here ---------------------------------------
+#
+# StreetEasy / Zillow: excluded on purpose. Zillow-owned, ToS-prohibited,
+# actively enforced -- and strategically pointless, since anything sourced
+# there is by definition late. It appears in this system only as a
+# verification timestamp fed to rentradar.leadtime, never as inventory.
+#
+# REBNY RLS: not a scraping target. It is a licensed feed. Access runs
+# through the Direct Data License Feed Application, requires a member
+# brokerage, and syndication partners face monthly committee review plus a
+# signed agreement. Treat it as a corporate-development track, not an
+# engineering one -- but it is the single largest step-change in coverage
+# available, and the survey below is the argument for pursuing it: the open
+# operator web is almost entirely closed to static crawling.
+
+# ---------------------------------------------------------------------------
+# discover_queue -- ranked targets for `python -m rentradar.cli discover`.
+#
+# Generated from a survey of 122 NYC operators (tools/survey.py). Every entry
+# was reachable and permitted by robots.txt; none exposed inventory to a plain
+# HTTP client. Work top down: run discover, paste the emitted jsonapi spec
+# into `sources:` above, verify the field map against the sample, enable it.
+#
+#   python -m rentradar.cli discover --queue sources.yaml --top 10
+#   python -m rentradar.cli discover --queue --offset 13 --top 13
+#
+# FIRST FULL RUN (39 targets): 6 endpoints captured, 2 verified good and now
+# live in `sources:` above (tfcornerstone, stuytown), 1 partial, 3 rejected on
+# review. The tool prints a record sample precisely so that review happens --
+# do not enable a generated spec you have not read.
+#
+#   rejected  Two Trees      /api/slides is the CMS carousel, not inventory
+#                            (top record was a restaurant, Cafe Mogador)
+#   rejected  Greystar       real endpoint, wrong geography -- the survey URL
+#                            landed on Charlotte NC; retarget to a NY search
+#   rejected  WinnCompanies  /api/v1/properties returns buildings, not units
+#   partial   Manhattan Skyline  27 units with real unit numbers, but
+#                            building.address.display_name is null and only
+#                            lat/lng is published; needs reverse geocoding
+#                            before it can join on BBL. Endpoint:
+#                            https://manhattanskyline.com/api/units?orderBy=featured&price=max
+#
+# The 33 misses are mostly one level too shallow: discovery ran against
+# portfolio pages, and these sites fetch inventory only on a per-building page
+# or after a search interaction. Re-run against building URLs from
+# tools/drilldown.py rather than concluding the endpoint is absent.
+# ---------------------------------------------------------------------------
+discover_queue:
+
+  # -- vendor-backed: one adapter per VENDOR covers every operator on it.
+  #    Highest leverage in the whole list. Vendor portals refuse plain HTTP
+  #    clients (403), so these must be discovered through a real browser.
+  - id: brodsky_organization
+    operator: Brodsky Organization
+    url: https://www.brodsky.com/rentals/downtown-brooklyn/city-tower
+    tier: 1
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: dermot_company
+    operator: Dermot Company
+    url: https://www.dermotcompany.com/state/new-york
+    tier: 1
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: rxr_realty
+    operator: RXR Realty
+    url: https://rxr.com/availabilities/commercial/
+    tier: 1
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: solil_management
+    operator: Solil Management
+    url: https://www.solil.com/residential/
+    tier: 1
+    survey: PMS
+    vendor: On-Site
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: brp_companies
+    operator: BRP Companies
+    url: https://www.brpcompanies.com/portfolio/
+    tier: 2
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: bronstein_properties
+    operator: Bronstein Properties
+    url: https://bronsteinproperties.com/
+    tier: 2
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: heatherwood
+    operator: Heatherwood
+    url: https://heatherwood.com/home
+    tier: 2
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: related_affordable
+    operator: Related Affordable
+    url: https://www.relatedaffordable.com/our-communities
+    tier: 2
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: windsor_communities
+    operator: Windsor Communities
+    url: https://www.windsorcommunities.com/find-apartments/
+    tier: 2
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: winncompanies
+    operator: WinnCompanies
+    url: https://www.winncompanies.com/
+    tier: 2
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: benchmark_real_estate_group
+    operator: Benchmark Real Estate Group
+    url: https://benchmarkreg.com/properties/
+    tier: 3
+    survey: PMS
+    vendor: AppFolio
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: cayuga_capital_management
+    operator: Cayuga Capital Management
+    url: https://www.cayugacapital.com/
+    tier: 3
+    survey: PMS
+    vendor: AppFolio
+    why: vendor-backed; build the vendor adapter once, reuse
+  - id: riseboro_community_partnersh
+    operator: Riseboro Community Partnership
+    url: https://riseboro.org/program/rental-assistance-program-erap/
+    tier: 3
+    survey: PMS
+    vendor: Yardi RentCafe
+    why: vendor-backed; build the vendor adapter once, reuse
+
+  # -- tier-1 client-rendered: largest portfolios, inventory behind XHR.
+  - id: a_e_real_estate
+    operator: A&E Real Estate
+    url: https://aemgmt.com/
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: beam_living
+    operator: Beam Living
+    url: https://www.beamliving.com/apartments
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: bozzuto_management
+    operator: Bozzuto Management
+    url: https://www.bozzuto.com/apartments
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: durst_organization
+    operator: Durst Organization
+    url: https://www.durst.org/properties/residential
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: extell_development
+    operator: Extell Development
+    url: https://extell.com/apartments
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: gotham_organization
+    operator: Gotham Organization
+    url: https://gothamorg.com/
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: manhattan_skyline_management
+    operator: Manhattan Skyline Management
+    url: https://manhattanskyline.com/rentals
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: tf_cornerstone
+    operator: TF Cornerstone
+    url: https://tfc.com/apartments
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+  - id: two_trees_management
+    operator: Two Trees Management
+    url: https://twotreesny.com/apartments
+    tier: 1
+    survey: SPA
+    why: large portfolio, client-rendered shell
+
+  # -- tier-1 server-rendered: real availability pages, but zero prices
+  #    in the HTML source. Units load client-side one level deeper.
+  - id: avalonbay
+    operator: AvalonBay
+    url: https://www.avaloncommunities.com:443/ava-apartments/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: brookfield_properties
+    operator: Brookfield Properties
+    url: https://www.bgre.com/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: cammeby_s_international
+    operator: Cammeby's International
+    url: https://cammebys.com/listings/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: glenwood_management
+    operator: Glenwood Management
+    url: https://www.glenwoodnyc.com/search-result/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: greystar
+    operator: Greystar
+    url: https://www.greystar.com/s/charlotte-nc
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: l_m_development_partners
+    operator: L+M Development Partners
+    url: https://lmdp.com/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: lefrak
+    operator: LeFrak
+    url: https://www.lefrak.com/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: ogden_cap_properties
+    operator: Ogden CAP Properties
+    url: https://www.ogdencapproperties.com/property-listing
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: phipps_houses
+    operator: Phipps Houses
+    url: https://www.phippsny.org/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: related_companies
+    operator: Related Companies
+    url: https://www.related.com/residential
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: related_rentals
+    operator: Related Rentals
+    url: https://www.relatedrentals.com/search
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: rockrose_development
+    operator: Rockrose Development
+    url: https://rockrose.com/availabilities/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: rose_associates
+    operator: Rose Associates
+    url: https://rosenyc.com/communities/
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: rudin_management
+    operator: Rudin Management
+    url: https://www.rudin.com/all-availabilities
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: silverstein_properties
+    operator: Silverstein Properties
+    url: https://www.silversteinproperties.com/portfolio-properties
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: stellar_management
+    operator: Stellar Management
+    url: https://www.stellarmanagement.com/availabilities
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side
+  - id: stuytown_property_services
+    operator: StuyTown Property Services
+    url: https://www.stuytown.com/nyc-apartments-for-rent
+    tier: 1
+    survey: HTML
+    why: availability page found; units load client-side

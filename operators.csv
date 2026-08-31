@@ -1,0 +1,130 @@
+# NYC residential operators — source-acquisition candidate registry.
+# Columns: name,domain,tier,confidence,note
+#   tier       1 = large portfolio / high unit count, 2 = mid, 3 = small or narrow
+#   confidence confirmed = domain published in a directory or already reached;
+#              unverified = best-guess domain, expect some to fail DNS
+# The survey tool probes each domain for a listings page, so wrong guesses cost
+# nothing but a line of output. Prune as results come in.
+name,domain,tier,confidence,note
+TF Cornerstone,tfc.com,1,confirmed,LIC / Hudson Yards / West Side no-fee high-rises
+Glenwood Management,glenwoodnyc.com,1,confirmed,UES and Midtown East luxury
+Related Rentals,relatedrentals.com,1,confirmed,Hudson Yards / Chelsea / UES
+Brodsky Organization,brodsky.com,1,confirmed,Chelsea / UWS / Morningside Heights
+Rockrose Development,rockrose.com,1,confirmed,LIC and Financial District
+UDR,udr.com,1,confirmed,FiDi / Murray Hill / UWS
+Equity Residential,equityapartments.com,1,confirmed,thousands of units Manhattan + Brooklyn
+AvalonBay,avaloncommunities.com,1,confirmed,Chelsea / East Village / Downtown Brooklyn
+Silverstein Properties,silversteinproperties.com,1,confirmed,Hell's Kitchen and FiDi
+Durst Organization,durst.org,1,confirmed,Midtown West and Astoria
+Rose Associates,rosenyc.com,1,confirmed,FiDi / UWS / Chelsea
+Ogden CAP Properties,ogdencapproperties.com,1,confirmed,Kips Bay and UES
+Gotham Organization,gothamorg.com,1,confirmed,Hell's Kitchen and Fort Greene
+LCOR,lcor.com,2,confirmed,Williamsburg and FiDi
+Dermot Company,dermotcompany.com,1,confirmed,UWS / Brooklyn / East Village
+Fetner Properties,fetner.com,2,confirmed,UWS / UES / Hell's Kitchen
+Solow Residential,solowresidential.com,2,confirmed,UES waterfront
+Bettina Equities,bettinaequities.com,2,confirmed,40+ properties 2000+ units Manhattan
+Jakobson Properties,jakobson.com,2,confirmed,Village / Chelsea / Murray Hill
+Pan Am Equities,panamequities.com,2,confirmed,East Village / LES / Union Square
+StuyTown Property Services,stuytown.com,1,confirmed,11000+ units single campus
+Stonehenge NYC,stonehengenyc.com,1,confirmed,VERIFIED schema.org feed — already ingesting
+Stellar Management,stellarmanagement.com,1,confirmed,large rent-stabilized exposure
+Cammeby's International,cammebys.com,1,confirmed,very large outer-borough portfolio
+Solil Management,solil.com,1,confirmed,Goldman estate portfolio
+Rudin Management,rudin.com,1,confirmed,Manhattan resi and office
+Bozzuto Management,bozzuto.com,1,confirmed,third-party manager many NYC lease-ups
+Beam Living,beamliving.com,1,confirmed,Blackstone operator — StuyTown / Kips Bay
+Manhattan Skyline Management,manhattanskyline.com,1,confirmed,several thousand luxury units
+Two Trees Management,twotreesny.com,1,confirmed,6000+ apartments DUMBO / Williamsburg
+Time Equities,timeequities.com,2,confirmed,mixed national with NYC resi
+Windsor Communities,windsorcommunities.com,2,confirmed,national operator with NYC assets
+Greystar,greystar.com,1,confirmed,largest US manager — NYC lease-ups
+Olnick Organization,olnick.com,2,confirmed,Lenox Terrace and Harlem portfolio
+Algin Management,alginmanagement.com,2,confirmed,Manhattan rentals
+Clinton Management,clintonmanagement.com,2,unverified,Hell's Kitchen focus
+Skyline Developers,skylinedevelopers.com,2,unverified,Kalikow family portfolio
+9300 Realty,9300realty.com,3,unverified,small Manhattan portfolio
+Harlington Realty,harlingtonrealty.com,3,unverified,from NYBits manager directory
+Halcyon Management Group,halcyonmgt.com,3,unverified,from NYBits manager directory
+Bridgeline Property Management,bridgelinepm.com,3,unverified,from NYBits manager directory
+Monarch Realty Holdings,monarchrealtyholdings.com,3,unverified,from NYBits manager directory
+Newport Management,newportmgmt.com,3,unverified,from NYBits manager directory
+Royal Realty,royalrealtycorp.com,3,unverified,from NYBits manager directory
+Kings and Queens Leasing,kingsandqueensleasing.com,3,unverified,outer-borough leasing agent
+A&E Real Estate,aemgmt.com,1,confirmed,very large rent-stabilized portfolio
+LeFrak,lefrak.com,1,confirmed,LeFrak City and Newport
+Related Companies,related.com,1,confirmed,parent of Related Rentals
+Extell Development,extell.com,1,confirmed,luxury condo and rental towers
+Moinian Group,moiniangroup.com,1,unverified,large Manhattan rental portfolio
+RXR Realty,rxrrealty.com,1,confirmed,mixed with growing resi
+Tishman Speyer,tishmanspeyer.com,1,confirmed,Jackson Park LIC and others
+Brookfield Properties,brookfieldproperties.com,1,confirmed,Greenpoint Landing and Manhattan West
+Heatherwood,heatherwood.com,2,unverified,LIC and Long Island rentals
+Douglaston Development,douglastondevelopment.com,2,unverified,large Brooklyn/Queens developer
+Slate Property Group,slatepropertygroup.com,2,unverified,Manhattan and Brooklyn rentals
+Naftali Group,naftaligroup.com,2,unverified,luxury Manhattan and Brooklyn
+Criterion Group,criteriongroup.com,2,unverified,Astoria and LIC
+Fortis Property Group,fortispg.com,2,unverified,Brooklyn Heights and Downtown Brooklyn
+Charney Companies,charneycompanies.com,2,unverified,Gowanus and Downtown Brooklyn
+Simon Baron Development,simonbaron.com,2,unverified,LIC and Manhattan
+Nelson Management Group,nelsonmgt.com,2,unverified,large affordable/stabilized portfolio
+Pinnacle City Living,pinnaclecityliving.com,2,unverified,Harlem and Bronx stabilized
+Bronstein Properties,bronsteinproperties.com,2,unverified,Queens and Brooklyn walk-ups
+Icon Realty Management,iconrealtynyc.com,2,unverified,East Village and LES
+Benchmark Real Estate Group,benchmarkreg.com,3,unverified,Manhattan small buildings
+Sugar Hill Capital Partners,sugarhillcp.com,3,unverified,Upper Manhattan
+Silverstone Property Group,silverstonepg.com,3,unverified,Manhattan stabilized
+Lalezarian Properties,lalezarian.com,2,unverified,LIC and Manhattan towers
+Clipper Equity,clipperequity.com,2,unverified,Brooklyn and Manhattan rentals
+Muss Development,mussdevelopment.com,2,unverified,Brooklyn and Queens
+Parkoff Organization,parkoff.com,2,unverified,Queens and Bronx stabilized
+Wavecrest Management,wavecrestmgt.com,2,unverified,large affordable manager
+Metro Management Development,metromanagement.com,3,unverified,Queens co-op and rental manager
+Kushner Companies,kushner.com,2,unverified,Brooklyn and Manhattan rentals
+Zeckendorf Development,zeckendorf.com,3,unverified,luxury Manhattan
+Alchemy Properties,alchemyproperties.com,3,unverified,Manhattan boutique
+JEMB Realty,jemb.com,3,unverified,Downtown Brooklyn and FiDi
+Sapir Organization,sapirorg.com,3,unverified,Manhattan mixed
+Witkoff Group,witkoff.com,3,unverified,Manhattan mixed
+Trinity Place Holdings,trinityplaceholdings.com,3,unverified,FiDi resi
+Toll Brothers City Living,tollbrotherscityliving.com,2,unverified,NYC condo and rental
+Habyt,habyt.com,2,unverified,co-living successor to Common
+Veris Residential,verisresidential.com,2,unverified,Jersey City — adjacent market comp
+Carmel Partners,carmelpartners.com,2,unverified,LIC and Manhattan lease-ups
+Sentinel Real Estate,sentinelcorp.com,2,unverified,national with NYC assets
+Lincoln Property Company,lincolnapts.com,2,unverified,national manager
+L+M Development Partners,lmdevpartners.com,1,unverified,largest affordable developer
+Phipps Houses,phippsny.org,1,unverified,oldest and largest nonprofit owner
+Hudson Companies,hudsoncos.com,2,unverified,affordable and market-rate
+Jonathan Rose Companies,rosecompanies.com,2,unverified,green affordable portfolio
+Omni New York,omninewyork.com,2,unverified,affordable preservation
+BRP Companies,brpcompanies.com,2,unverified,mixed-income developer
+Camber Property Group,camberpg.com,2,unverified,affordable preservation
+Fairstead,fairstead.com,2,unverified,affordable preservation
+Tredway,tredway.com,3,unverified,affordable developer
+MDG Design and Construction,mdgny.com,3,unverified,affordable developer
+Monadnock Development,monadnockdevelopment.com,3,unverified,affordable developer
+Arker Companies,arkercompanies.com,2,unverified,large affordable owner
+WinnCompanies,winncompanies.com,2,unverified,national affordable manager
+Settlement Housing Fund,settlementhousingfund.org,3,unverified,nonprofit owner
+Breaking Ground,breakingground.org,3,unverified,supportive housing
+Riseboro Community Partnership,riseboro.org,3,unverified,Brooklyn nonprofit owner
+Alma Realty,almarealtycorp.com,2,unverified,Astoria and LIC
+Marx Realty,marxrealty.com,3,unverified,mixed portfolio
+Sky Management,skymanagementny.com,3,unverified,Manhattan small buildings
+Related Affordable,relatedaffordable.com,2,unverified,affordable arm of Related
+The Georgetown Company,thegeorgetowncompany.com,3,unverified,mixed developer
+Empire State Realty Trust,esrtreit.com,3,unverified,mostly office some resi
+Rabsky Group,rabskygroup.com,3,unverified,Williamsburg and Bushwick
+Adam America Real Estate,adamamerica.com,3,unverified,Brooklyn condo and rental
+Avery Hall Investments,averyhall.com,3,unverified,Brooklyn developer
+Tavros Capital,tavroscapital.com,3,unverified,Manhattan and Brooklyn
+RedSky Capital,redskycapital.com,3,unverified,Brooklyn retail and resi
+Hope Street Capital,hopestreetcapital.com,3,unverified,Brooklyn developer
+Brooklyn Home Company,thebrooklynhomecompany.com,3,unverified,Brooklyn boutique
+Cayuga Capital Management,cayugacapital.com,3,unverified,Brooklyn and Queens
+Greystone Property Management,greystoneproperty.com,3,unverified,national with NYC
+FirstService Residential,fsresidential.com,2,unverified,largest NYC building manager
+Douglas Elliman Property Management,ellimanpm.com,2,unverified,large third-party manager
+Akam Living Services,akam.com,3,unverified,co-op and condo manager
+Related Argent,relatedargent.com,3,unverified,likely UK entity — expect miss
