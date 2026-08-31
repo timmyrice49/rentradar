@@ -1,13 +1,13 @@
-last_run: 2026-08-31T15:42:18Z
-commit: 944e4e9fc5be48db3b65fc443a68fe2a4c07a297
+last_run: 2026-08-31T15:54:44Z
+commit: f59bcb76514876e14fcce9fdc7f97ebe99aa7367
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
-stonehenge                     y    10    10     0     0      0
-nyc_housing_connect            y    31    24     0     0      3
-nybits                         y   339   339     0     0      0
-tfcornerstone                  y   124   124     0     0     26
-stuytown                       y   100    96     4     0      0
-rockrose                       y    52    52     0     0      0
+stonehenge                     y    10     0     0     0      0
+nyc_housing_connect            n     0     0     0     0      0   nyc_housing_connect: HTTP 503 for https://data.cityofnewyork.us/resource/vy5i-a666.json?%24limit=1000&%24order=lottery_start_date+DESC&%24where=development_type%3D%27Rental%27
+nybits                         y   340    25     0    24      0
+tfcornerstone                  y   124     0     0     0     26
+stuytown                       y   100     0     8     0      0
+rockrose                       y    52     0     0     0      0
 
-geocoder: 399 cached, 257 fetched, 0 failed, 0 below threshold
+geocoder: 622 cached, 4 fetched, 0 failed, 0 below threshold
