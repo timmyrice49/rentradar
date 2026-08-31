@@ -1,27 +1,30 @@
-last_run: 2026-08-31T21:39:37Z
-commit: 6579b82e8eacb300fceb8ef95c458a80a3ce3ec6
+last_run: 2026-08-31T21:54:31Z
+commit: d99045caed1cfa124de17aa0188e4287073ecfbf
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         n     0     0     0     0      0   nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
+nybits                         y   338    48     3    53      0
 tfcornerstone                  y   124     0     0     0     26
 stuytown                       y   100     0     8     0      0
 rockrose                       y    53     0     0     0      0
 
-geocoder: 318 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 649 cached, 7 fetched, 0 failed, 0 below threshold
 
-pairs found      47  (39 on an exact rent match)
-newly recorded   0
+pairs found      48  (40 on an exact rent match)
+newly recorded   1
 already measured 47
 unusable         0
 implausible      0  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+  -377.8h  censored:present-at-first-crawl building+beds+price          100 JANE STREET, New York, NY, USA #7Q $5,050
+
 == lead time ==
   measured               2
-  pending                641
-  excluded_mixed_basis   45
+  pending                688
+  excluded_mixed_basis   46
   median_hours           1.0
   mean_hours             1.0
   p10_hours              0.5
@@ -30,7 +33,7 @@ implausible      0  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.0
   share_ahead_72h        0.0
   basis                  {'first_seen->first_seen': 2}
-  vs                     {'nybits': 47}
+  vs                     {'nybits': 48}
   caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.

@@ -1,16 +1,16 @@
 == inventory ==
-  listings_total         688
-  listings_active        647
-  with_bbl               659
+  listings_total         736
+  listings_active        645
+  with_bbl               707
   with_unit              285
   high_confidence        259
-  events                 925
-  distinct_buildings     184
+  events                 1037
+  distinct_buildings     190
 
 == lead time vs aggregators ==
   measured               2
-  pending                641
-  excluded_mixed_basis   45
+  pending                688
+  excluded_mixed_basis   46
   median_hours           1.0
   mean_hours             1.0
   p10_hours              0.5
@@ -19,19 +19,19 @@
   share_ahead_24h        0.0
   share_ahead_72h        0.0
   basis                  {'first_seen->first_seen': 2}
-  vs                     {'nybits': 47}
+  vs                     {'nybits': 48}
   caveat                 small sample
 
 == recent crawls ==
+  2026-08-31T21:53:37+00:00  rockrose                 ok=1 raw=53    new=0     
+  2026-08-31T21:53:36+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-08-31T21:53:36+00:00  tfcornerstone            ok=1 raw=124   new=0     
+  2026-08-31T21:52:38+00:00  nybits                   ok=1 raw=338   new=48    
+  2026-08-31T21:52:37+00:00  nyc_housing_connect      ok=1 raw=31    new=0     
+  2026-08-31T21:52:37+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-08-31T21:38:43+00:00  rockrose                 ok=1 raw=53    new=0     
   2026-08-31T21:38:43+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-08-31T21:38:42+00:00  tfcornerstone            ok=1 raw=124   new=0     
   2026-08-31T21:37:56+00:00  nybits                   ok=0 raw=0     new=0     nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
   2026-08-31T21:37:54+00:00  nyc_housing_connect      ok=1 raw=31    new=0     
   2026-08-31T21:37:54+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-08-31T21:23:42+00:00  rockrose                 ok=1 raw=53    new=0     
-  2026-08-31T21:23:42+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-08-31T21:23:42+00:00  tfcornerstone            ok=1 raw=124   new=0     
-  2026-08-31T21:22:55+00:00  nybits                   ok=1 raw=340   new=0     
-  2026-08-31T21:22:54+00:00  nyc_housing_connect      ok=1 raw=31    new=0     
-  2026-08-31T21:22:54+00:00  stonehenge               ok=1 raw=10    new=0     
