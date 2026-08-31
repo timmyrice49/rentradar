@@ -34,6 +34,8 @@ Working, verified against live sources:
 | `jsonapi` adapter | Verified live: TF Cornerstone 124 units, StuyTown 96 |
 | `discover --deep` | Verified: follows rendered building links; 5/10 on tier-1 SPAs |
 | `reddit` adapter | Parser + filter tested offline; needs your API credentials |
+| `crossmatch` (lead time) | Verified: 42 pairs found on live data, 34 on an exact rent match |
+| HPD fallback geocoder | Verified: resolves to the same BBL/BIN as GeoSearch when the primary is down |
 
 ## What a 122-operator survey found
 
@@ -213,6 +215,41 @@ data. Two worth knowing about:
   one phantom unit. The descriptor tail has to come off first.
 - `"1 Bedroom"` parsed to `None` because the regex required a word boundary
   right after `bed`. Every one-bedroom in the system was silently bed-less.
+
+## Measuring lead time
+
+`cli crossmatch` pairs upstream listings with aggregator listings and writes
+the result to the lead-time ledger. Aggregators publish a building, a bed
+count and a rent but no apartment number, so the match is
+`(building, beds, price)` -- within one building and bed count the rent is
+close to unique.
+
+Four guards stop it producing a flattering number, and on the first live run
+**all four fired and left zero usable measurements**. That is the correct
+outcome, and worth understanding before you read any figure it emits:
+
+1. **Mixed clocks are excluded.** Comparing our `first_seen` against a
+   publisher's posting date guarantees a negative lead on a young database:
+   ours says "now", theirs says "four days ago". Only same-clock pairs count,
+   and every measurement records its `basis`.
+2. **Left-censored listings are excluded.** If a unit was already on the
+   market when the crawler started, its `first_seen` records our start date,
+   not the listing's. On a cold database that is every row. A source needs two
+   crawls before any of its `first_seen` values mean anything.
+3. **Implausible pairs are rejected.** More than 60 days apart and it is
+   almost certainly not the same apartment -- a stale aggregator listing
+   pairing with a freshly listed unit at the same rent.
+4. **One-to-one matching.** A building with six identical studios cannot
+   contribute six copies of one pairing.
+
+So the honest status is: the machinery works, and it needs the crawler to
+accumulate history rather than more code. Once each source has run twice,
+newly-appearing units give clean `first_seen -> first_seen` measurements.
+
+And note what it measures: lead over **NYBits**, not over StreetEasy. Real,
+but weaker than the pitch. Calibrate with a manual StreetEasy sample -- their
+Property History shows a listed date retroactively, so one session can date a
+hundred listings you found today -- before making the stronger claim.
 
 ## The informal channel: what's reachable and what isn't
 

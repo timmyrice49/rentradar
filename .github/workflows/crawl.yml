@@ -64,6 +64,10 @@ jobs:
         continue-on-error: true
         run: python -m rentradar.cli crawl | tee crawl.log
 
+      - name: Measure lead time
+        continue-on-error: true
+        run: python -m rentradar.cli crossmatch | tee crossmatch.log
+
       - name: Record status
         run: |
           mkdir -p data
@@ -73,6 +77,8 @@ jobs:
             echo "commit: ${{ github.sha }}"
             echo
             sed -n '/^source/,$p' crawl.log
+            echo
+            cat crossmatch.log 2>/dev/null || true
           } > data/last_crawl.txt
 
       - name: Save crawl database

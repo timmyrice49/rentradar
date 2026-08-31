@@ -16,6 +16,7 @@ import json
 import logging
 import sqlite3
 import time
+import re
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
@@ -25,6 +26,27 @@ from .normalize import infer_borough, normalize_street
 log = logging.getLogger(__name__)
 
 GEOSEARCH_URL = "https://geosearch.planninglabs.nyc/v2/search"
+#: Independent fallback. HPD's Multiple Dwelling Registrations carry
+#: housenumber / streetname / boro -> bin + block + lot for every building
+#: with three or more units, which is most of the inventory this system
+#: cares about. Coverage is partial (condos and co-ops are often absent), but
+#: it runs on Socrata rather than on GeoSearch, so it survives the outages
+#: that take the primary down -- and GeoSearch went down twice in one day
+#: during this project, blocking BBL resolution and therefore every
+#: downstream join and every lead-time measurement.
+HPD_URL = "https://data.cityofnewyork.us/resource/tesw-yqqr.json"
+
+BORO_ID = {"Manhattan": "1", "Bronx": "2", "Brooklyn": "3",
+           "Queens": "4", "Staten Island": "5"}
+
+#: HPD spells streets out in full and drops ordinal suffixes:
+#: "410 E 20th St" is stored as housenumber 410, streetname "EAST 20 STREET".
+_HPD_EXPAND = {
+    "st": "STREET", "ave": "AVENUE", "av": "AVENUE", "blvd": "BOULEVARD",
+    "pl": "PLACE", "rd": "ROAD", "dr": "DRIVE", "ct": "COURT",
+    "ln": "LANE", "pkwy": "PARKWAY", "ter": "TERRACE", "plz": "PLAZA",
+    "sq": "SQUARE", "n": "NORTH", "s": "SOUTH", "e": "EAST", "w": "WEST",
+}
 USER_AGENT = "RentRadar/0.1 (NYC rental availability monitor)"
 
 # GeoSearch is a public good with no published rate limit. Be a good citizen:
@@ -32,6 +54,12 @@ USER_AGENT = "RentRadar/0.1 (NYC rental availability monitor)"
 # cache means we rarely sustain even that.
 _MIN_INTERVAL = 0.1
 _last_call = 0.0
+
+
+class TransientGeocodeError(RuntimeError):
+    """The provider was unreachable. Distinct from 'no such address' -- a
+    transient failure must never be cached as a negative, or one outage
+    poisons the cache for every address seen during it."""
 
 
 @dataclass(frozen=True)
@@ -43,10 +71,61 @@ class GeoResult:
     lat: float | None
     lon: float | None
     confidence: float
+    provider: str = "geosearch"
 
     @property
     def resolved(self) -> bool:
         return bool(self.bbl)
+
+
+def hpd_street_form(street_remainder: str) -> str:
+    """Render a street name the way HPD stores it."""
+    out = []
+    for tok in normalize_street(street_remainder).split():
+        out.append(_HPD_EXPAND.get(tok, tok).upper())
+    return " ".join(out)
+
+
+def _split_address(address: str) -> tuple[str, str]:
+    m = re.match(r"\s*(\d[\w-]*)\s+(.*)$", address or "")
+    return (m.group(1), m.group(2)) if m else ("", address or "")
+
+
+def hpd_lookup(address: str, borough: str | None, timeout: int = 20
+               ) -> GeoResult | None:
+    """Resolve via HPD registrations. Raises TransientGeocodeError if down."""
+    house, street = _split_address(address)
+    boro_id = BORO_ID.get(borough or "")
+    if not (house and street and boro_id):
+        return None
+    params = {"$limit": 5, "boroid": boro_id,
+              "streetname": hpd_street_form(street),
+              "lowhousenumber": house}
+    url = f"{HPD_URL}?{urllib.parse.urlencode(params)}"
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            rows = json.loads(resp.read().decode("utf-8"))
+    except Exception as exc:
+        raise TransientGeocodeError(f"hpd: {exc}") from exc
+    if not rows:
+        return None
+    r = rows[0]
+    block, lot = r.get("block"), r.get("lot")
+    bbl = (f"{boro_id}{int(block):05d}{int(lot):04d}"
+           if block and lot and str(block).isdigit() and str(lot).isdigit()
+           else None)
+    return GeoResult(
+        bbl=bbl, bin=r.get("bin"),
+        label=f"{r.get('housenumber','')} {r.get('streetname','')}, "
+              f"{(borough or '').upper()}".strip(),
+        borough=borough,
+        lat=None, lon=None,
+        # Slightly below a GeoSearch hit: this is an exact-string table match
+        # with no fuzzy handling, so it is right or it is absent.
+        confidence=0.9,
+        provider="hpd",
+    )
 
 
 class Geocoder:
@@ -56,7 +135,8 @@ class Geocoder:
         self.conn = conn
         self.min_confidence = min_confidence
         self._ensure_table()
-        self.stats = {"hit": 0, "miss": 0, "fail": 0, "low_confidence": 0}
+        self.stats = {"hit": 0, "miss": 0, "fail": 0, "low_confidence": 0,
+                      "fallback": 0}
 
     def _ensure_table(self) -> None:
         self.conn.execute(
@@ -146,11 +226,32 @@ class Geocoder:
 
         self.stats["miss"] += 1
         payload = self._fetch(query)
+        result = self._parse(payload) if payload is not None else None
+
+        if payload is None or result is None:
+            # Primary gave nothing. Try the independent provider before
+            # concluding the address does not exist -- during a GeoSearch
+            # outage that conclusion would be wrong for every address.
+            try:
+                alt = hpd_lookup(address, borough)
+            except TransientGeocodeError as exc:
+                log.warning("fallback geocoder also unavailable: %s", exc)
+                alt = None
+            if alt is not None and alt.bbl:
+                self.stats["fallback"] = self.stats.get("fallback", 0) + 1
+                self.conn.execute(
+                    "INSERT OR REPLACE INTO geocode_cache "
+                    "(query, bbl, bin, label, borough, lat, lon, confidence) "
+                    "VALUES (?,?,?,?,?,?,?,?)",
+                    (query, alt.bbl, alt.bin, alt.label, alt.borough,
+                     alt.lat, alt.lon, alt.confidence),
+                )
+                self.conn.commit()
+                return alt
+
         if payload is None:
             self.stats["fail"] += 1
             return None  # transient: do NOT cache, so we retry next run
-
-        result = self._parse(payload)
         if result is None or result.confidence < self.min_confidence:
             if result is not None:
                 self.stats["low_confidence"] += 1

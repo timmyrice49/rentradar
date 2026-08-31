@@ -93,6 +93,7 @@ sources:
       available_on: Availability
       borough: Neighborhood
       source_ref: Id
+      listed_at: DateListed
       detail_url: WebUrl
     notes: >
       Found by headless discovery; the site itself is a 5KB shell the survey

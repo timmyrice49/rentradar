@@ -121,6 +121,9 @@ class JsonApiSource(Source):
                 baths_raw=dig(rec, f.get("baths", "")),
                 sqft_raw=dig(rec, f.get("sqft", "")),
                 available_on=dig(rec, f.get("available_on", "")),
+                listed_at=(str(dig(rec, f["listed_at"]))
+                           if f.get("listed_at") and dig(rec, f["listed_at"])
+                           else None),
                 title=dig(rec, f.get("title", "")),
                 detail_url=dig(rec, f.get("detail_url", "")),
                 borough_hint=dig(rec, f.get("borough", "")) or self.borough_hint,

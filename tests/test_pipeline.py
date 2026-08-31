@@ -126,11 +126,13 @@ check("dispatcher fired once", len(sent), 1)
 print("\nlead time")
 fp = matches[0][0]["fingerprint"]
 later = (datetime.fromisoformat(fs_12b) + timedelta(hours=52)).isoformat()
-lead = leadtime.record_aggregator_hit(conn, fp, "streeteasy", later)
+lead, wrote = leadtime.record_aggregator_hit(conn, fp, "streeteasy", later)
 check("lead hours", round(lead, 1), 52.0)
-again = leadtime.record_aggregator_hit(conn, fp, "streeteasy",
-                                       (datetime.now(timezone.utc)).isoformat())
+check("reported as a new measurement", wrote, True)
+again, wrote2 = leadtime.record_aggregator_hit(
+    conn, fp, "streeteasy", (datetime.now(timezone.utc)).isoformat())
 check("first hit is not overwritten", round(again, 1), 52.0)
+check("second call reports no write", wrote2, False)
 rep = leadtime.report(conn)
 check("one measurement", rep["measured"], 1)
 check("median", rep["median_hours"], 52.0)

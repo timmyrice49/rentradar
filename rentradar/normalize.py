@@ -141,6 +141,44 @@ _ADDRESS_LIKE = re.compile(
 )
 
 
+_TS_FORMATS = ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d",
+               "%m/%d/%Y", "%m/%d/%Y %H:%M:%S")
+
+
+def to_utc_iso(value) -> str | None:
+    """Coerce any publisher timestamp to a timezone-aware UTC ISO string.
+
+    Sources are inconsistent: TF Cornerstone emits "2026-08-27 22:07:40" with
+    no zone, Socrata emits ISO with a T, NYBits is computed and already aware.
+    Mixing naive and aware values makes arithmetic raise, which is how the
+    first live lead-time run died. Naive input is assumed to be UTC -- a few
+    hours of error on a measurement quoted in days, and far better than
+    discarding the date.
+    """
+    if value in (None, ""):
+        return None
+    from datetime import datetime, timezone
+    if isinstance(value, datetime):
+        dt = value
+    else:
+        text = str(value).strip().replace("Z", "+00:00")
+        dt = None
+        try:
+            dt = datetime.fromisoformat(text)
+        except ValueError:
+            for fmt in _TS_FORMATS:
+                try:
+                    dt = datetime.strptime(text, fmt)
+                    break
+                except ValueError:
+                    continue
+        if dt is None:
+            return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc).isoformat(timespec="seconds")
+
+
 def house_number(address: str) -> str:
     """Leading house number of an address line, '' if there isn't one."""
     m = re.match(r"\s*(\d{1,4}(?:-\d{1,3})?)\b", address or "")

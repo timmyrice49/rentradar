@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS listings (
     baths         REAL,
     sqft          INTEGER,
     available_on  TEXT,
+    listed_at     TEXT,
     no_fee        INTEGER,
     first_seen    TEXT NOT NULL,
     last_seen     TEXT NOT NULL,
@@ -71,7 +72,14 @@ CREATE TABLE IF NOT EXISTS lead_time (
     our_first_seen   TEXT NOT NULL,
     aggregator       TEXT,
     aggregator_seen  TEXT,
-    lead_hours       REAL
+    lead_hours       REAL,
+    -- Which clocks were compared, e.g. "listed_at->listed_at" or
+    -- "first_seen->posted". A lead time is uninterpretable without it: the
+    -- same number means different things depending on whether both sides
+    -- published a real date or we substituted our own crawl time.
+    basis            TEXT,
+    matched_by       TEXT,   -- how the two listings were paired
+    matched_fp       TEXT    -- the aggregator listing, for auditing
 );
 
 CREATE TABLE IF NOT EXISTS crawl_runs (
@@ -94,8 +102,28 @@ def connect(path: str = "rentradar.db") -> sqlite3.Connection:
     conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA foreign_keys=ON")
     conn.executescript(SCHEMA)
+    _migrate(conn)
     conn.commit()
     return conn
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Add columns introduced after a database was first created.
+
+    CREATE TABLE IF NOT EXISTS silently does nothing on an existing table, so
+    new columns need an explicit ALTER. A crawl database in CI has real
+    first_seen history in it and must never be dropped and recreated.
+    """
+    wanted = {
+        "listings": [("listed_at", "TEXT")],
+        "lead_time": [("basis", "TEXT"), ("matched_by", "TEXT"),
+                      ("matched_fp", "TEXT")],
+    }
+    for table, cols in wanted.items():
+        have = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+        for name, decl in cols:
+            if name not in have:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
 
 
 class Store:

@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import logging
 import re
+from datetime import datetime, timedelta, timezone
 from urllib.parse import unquote, urljoin
 
 from ..models import RawListing
@@ -63,6 +64,37 @@ _POSTED_RE = re.compile(
     r"posted\s+(?:<\s*)?(today|yesterday|\d+\s*(?:hour|day|week)s?(?:\s+ago)?)",
     re.I,
 )
+
+
+def posted_to_timestamp(posted: str | None, now: datetime | None = None) -> str | None:
+    """"11 hours" / "yesterday" / "12 days ago" -> an ISO timestamp.
+
+    This is the aggregator side of every lead-time measurement, and it is far
+    better than using our own crawl time: on a cold crawl every listing looks
+    new at the same instant, which would report a lead of zero for the entire
+    database. Resolution is coarse (a day-grained stamp is a day-grained
+    answer) and it is the publisher's claim rather than an observation, so
+    treat it as approximate -- but approximate and real beats precise and
+    meaningless.
+    """
+    if not posted:
+        return None
+    now = now or datetime.now(timezone.utc)
+    p = posted.strip().lower()
+    if p == "today":
+        delta = timedelta(0)
+    elif p == "yesterday":
+        delta = timedelta(days=1)
+    else:
+        m = re.match(r"(\d+)\s*(hour|day|week)", p)
+        if not m:
+            return None
+        n = int(m.group(1))
+        unit = m.group(2)
+        delta = {"hour": timedelta(hours=n),
+                 "day": timedelta(days=n),
+                 "week": timedelta(weeks=n)}[unit]
+    return (now - delta).isoformat(timespec="seconds")
 
 
 def default_searches() -> list[str]:
@@ -212,6 +244,7 @@ class NyBitsSource(Source):
             baths_raw=baths,
             sqft_raw=None,
             available_on=None,
+            listed_at=posted_to_timestamp(posted),
             title=title or None,
             detail_url=detail_url,
             borough_hint=boro or hood,

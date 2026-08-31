@@ -8,7 +8,7 @@ from .geocode import Geocoder
 from .models import Listing, RawListing, utcnow
 from .normalize import (
     extract_unit_from_name, listing_fingerprint, normalize_unit,
-    parse_beds, parse_price,
+    parse_beds, parse_price, to_utc_iso,
 )
 from .sources import Source, SourceError
 from .store import Store
@@ -101,6 +101,7 @@ def normalize(raw: RawListing, geo: Geocoder) -> Listing | None:
         baths=parse_beds(raw.baths_raw) if raw.baths_raw is not None else None,
         sqft=_sqft(raw.sqft_raw),
         available_on=raw.available_on,
+        listed_at=to_utc_iso(raw.listed_at),
         no_fee=raw.no_fee,
         first_seen=now,
         last_seen=now,

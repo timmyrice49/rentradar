@@ -16,7 +16,7 @@ import os
 import sys
 from datetime import datetime, timedelta, timezone
 
-from . import leadtime
+from . import crossmatch, leadtime
 from .alerts import Criteria, Dispatcher, match_new
 from .geocode import Geocoder
 from .pipeline import run_source
@@ -222,6 +222,43 @@ def cmd_alerts(args) -> int:
     return 0
 
 
+def cmd_crossmatch(args) -> int:
+    """Measure lead time by pairing upstream listings with an aggregator."""
+    conn = connect(args.db)
+    res = crossmatch.run(
+        conn,
+        upstream_sources=args.upstream.split(",") if args.upstream else None,
+        aggregator_sources=args.aggregator.split(",") if args.aggregator else None,
+        tolerance=args.tolerance,
+    )
+    print(f"pairs found      {res['pairs_found']}  "
+          f"({res['exact_price']} on an exact rent match)")
+    print(f"newly recorded   {res['recorded']}")
+    print(f"already measured {res['already_measured']}")
+    print(f"unusable         {res['unusable']}")
+    print(f"implausible      {res['implausible']}  "
+          f"(> {crossmatch.MAX_PLAUSIBLE_LEAD_DAYS}d apart -- probably not the "
+          f"same apartment)")
+
+    fresh = [m for m in res["matches"] if "lead_hours" in m]
+    if fresh:
+        fresh.sort(key=lambda m: -m["lead_hours"])
+        print(f"\n{'lead':>9}  {'basis':24} {'match':28} listing")
+        for m in fresh[: args.show]:
+            unit = f"#{m['unit']}" if m["unit"] else "-"
+            print(f"{m['lead_hours']:>8.1f}h  {m['basis']:24} "
+                  f"{m['matched_by']:28} {(m['address'] or '')[:34]} {unit} "
+                  f"${m['price']:,}")
+
+    print("\n== lead time ==")
+    for k, v in leadtime.report(conn).items():
+        print(f"  {k:22} {v}")
+    print("\nNote: this measures lead over the aggregators listed above, not "
+          "over StreetEasy.\nCalibrate against a manual StreetEasy sample "
+          "before making the stronger claim.")
+    return 0
+
+
 def cmd_stats(args) -> int:
     conn = connect(args.db)
     store = Store(conn)
@@ -297,6 +334,16 @@ def main(argv=None) -> int:
     a.add_argument("--borough")
     a.add_argument("--no-fee", action="store_true")
     a.set_defaults(fn=cmd_alerts)
+
+    x = sub.add_parser("crossmatch",
+                       help="measure lead time against an aggregator source")
+    x.add_argument("--upstream", help="comma-separated source ids")
+    x.add_argument("--aggregator", help="comma-separated source ids")
+    x.add_argument("--tolerance", type=float,
+                   default=crossmatch.NEAR_PRICE_TOLERANCE,
+                   help="max fractional rent difference for a near match")
+    x.add_argument("--show", type=int, default=15)
+    x.set_defaults(fn=cmd_crossmatch)
 
     s = sub.add_parser("stats", help="inventory and lead-time report")
     s.set_defaults(fn=cmd_stats)

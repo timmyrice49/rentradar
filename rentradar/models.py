@@ -26,6 +26,11 @@ class RawListing:
     baths_raw: object = None
     sqft_raw: object = None
     available_on: str | None = None
+    #: When the PUBLISHER says the listing went up, if it says at all. This is
+    #: the honest basis for lead time: our own first_seen is only "when we
+    #: started looking", which on a cold crawl is the same instant for
+    #: everything and would report a lead of zero across the board.
+    listed_at: str | None = None
     title: str | None = None
     detail_url: str | None = None
     borough_hint: str | None = None
@@ -60,6 +65,7 @@ class Listing:
     baths: float | None
     sqft: int | None
     available_on: str | None
+    listed_at: str | None
     no_fee: bool | None
 
     first_seen: str
