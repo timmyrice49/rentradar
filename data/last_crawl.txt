@@ -1,36 +1,40 @@
-last_run: 2026-09-03T18:47:52Z
-commit: 267172f8ca353902961fafd1359957f5475f5027
+last_run: 2026-09-03T19:14:33Z
+commit: 8420721d45c3d63c963598ec6e8d0049b1662c30
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         y   339     9     2    11      0
+nybits                         y   339    22     0    22      0
 tfcornerstone                  y   124     0     0     0     26
 stuytown                       y   100     0     6     0      0
 rockrose                       y    51     0     0     0      0
 
 geocoder: 655 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      54  (44 on an exact rent match)
-newly recorded   0
+pairs found      56  (46 on an exact rent match)
+newly recorded   2
 already measured 52
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+     1.9h  first_seen->first_seen   building+beds+price          666 GREENWICH STREET, New York, NY #909 $8,995
+     1.9h  first_seen->first_seen   building+beds+price          666 GREENWICH STREET, New York, NY #PH18 $13,595
+
 == lead time ==
-  measured               7
-  pending                1072
+  measured               9
+  pending                1092
   excluded_mixed_basis   48
-  median_hours           0.4
-  mean_hours             0.4
+  median_hours           0.5
+  mean_hours             0.7
   p10_hours              -0.4
-  p90_hours              1.5
-  share_ahead            0.571
+  p90_hours              1.9
+  share_ahead            0.667
   share_ahead_24h        0.0
   share_ahead_72h        0.0
-  basis                  {'first_seen->first_seen': 7}
-  vs                     {'nybits': 55}
+  basis                  {'first_seen->first_seen': 9}
+  vs                     {'nybits': 57}
   caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
