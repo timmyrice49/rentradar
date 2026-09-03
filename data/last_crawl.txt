@@ -1,5 +1,5 @@
-last_run: 2026-09-03T17:58:06Z
-commit: 504120e9bf8816892a06aaec9cd2f04e48d1c4b1
+last_run: 2026-09-03T18:22:14Z
+commit: c5ff0feb313b2e2b27faeccdb0ed9b4f0f6e1701
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
