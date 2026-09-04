@@ -1,27 +1,30 @@
-last_run: 2026-09-04T12:21:43Z
-commit: e1ccca3e440c572d2b08ba0094d4f62ef0e988f2
+last_run: 2026-09-04T12:48:55Z
+commit: 01099e0abaa10f2e78061ad01e7efcd9eed80051
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         y   338     0     0     0      0
+nybits                         y   339    35    12    46      0
 tfcornerstone                  y   139     0     0     0     27
-stuytown                       y   100     3    86     6      0
+stuytown                       y   100     0     8     0      0
 rockrose                       y    52     0     0     0      0
 
-geocoder: 669 cached, 1 fetched, 0 failed, 0 below threshold
+geocoder: 670 cached, 1 fetched, 0 failed, 0 below threshold
 
-pairs found      57  (42 on an exact rent match)
-newly recorded   0
+pairs found      58  (45 on an exact rent match)
+newly recorded   1
 already measured 55
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+    69.1h  censored:present-at-first-crawl building+beds+near-price     653 EAST 14 STREET, New York, NY,  #8G $5,689
+
 == lead time ==
   measured               9
-  pending                1186
-  excluded_mixed_basis   49
+  pending                1220
+  excluded_mixed_basis   50
   median_hours           0.5
   mean_hours             0.7
   p10_hours              -0.4
@@ -30,7 +33,7 @@ implausible      2  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.0
   share_ahead_72h        0.0
   basis                  {'first_seen->first_seen': 9}
-  vs                     {'nybits': 58}
+  vs                     {'nybits': 59}
   caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
