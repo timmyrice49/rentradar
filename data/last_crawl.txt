@@ -1,11 +1,11 @@
-last_run: 2026-09-04T00:24:17Z
-commit: bacc0cf13af41e58c5062a894177b534f361ea52
+last_run: 2026-09-04T00:47:42Z
+commit: ed9e8d96f56c19ec671d8d2c0f51b3c9a99324e1
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         y   337     0     0     0      0
+nybits                         y   337    12     2    14      0
 tfcornerstone                  y   124     0     0     0     26
 stuytown                       y   100     0     6     0      0
 rockrose                       y    52     0     0     0      0
@@ -20,7 +20,7 @@ implausible      2  (> 60d apart -- probably not the same apartment)
 
 == lead time ==
   measured               9
-  pending                1122
+  pending                1134
   excluded_mixed_basis   48
   median_hours           0.5
   mean_hours             0.7
