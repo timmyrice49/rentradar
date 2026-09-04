@@ -1,27 +1,30 @@
-last_run: 2026-09-04T06:48:28Z
-commit: 6a8115c98acc45f54f95775fb144233ad3da6a84
+last_run: 2026-09-04T07:16:27Z
+commit: 45a065dd770929dfc1ba995fc096044be66daa03
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
 nybits                         y   338     0     0     0      0
-tfcornerstone                  y   124     0     0     0     26
+tfcornerstone                  y   139    49    42    34     27
 stuytown                       y   100     0     6     0      0
 rockrose                       y    52     0     0     0      0
 
-geocoder: 655 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 668 cached, 2 fetched, 0 failed, 0 below threshold
 
-pairs found      56  (46 on an exact rent match)
-newly recorded   0
+pairs found      57  (46 on an exact rent match)
+newly recorded   1
 already measured 54
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+   -83.3h  listed_at->first_seen    building+beds+near-price     33 BOND STREET, Brooklyn, NY, USA #1717 $4,500
+
 == lead time ==
   measured               9
-  pending                1135
-  excluded_mixed_basis   48
+  pending                1183
+  excluded_mixed_basis   49
   median_hours           0.5
   mean_hours             0.7
   p10_hours              -0.4
@@ -30,7 +33,7 @@ implausible      2  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.0
   share_ahead_72h        0.0
   basis                  {'first_seen->first_seen': 9}
-  vs                     {'nybits': 57}
+  vs                     {'nybits': 58}
   caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
