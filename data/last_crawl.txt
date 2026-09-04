@@ -1,36 +1,40 @@
-last_run: 2026-09-04T18:43:35Z
-commit: 189265cf9229729ad5f5383c9594b1b81e7b9254
+last_run: 2026-09-04T18:56:40Z
+commit: 24da11c55818d6029c03dbc298f6fce969221b08
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         y   336    16     1    17      0
+nybits                         y   338    26     1    25      0
 tfcornerstone                  y   139     0     0     0     27
 stuytown                       y   100     0     8     0      0
 rockrose                       y    54     0     0     0      0
 
-geocoder: 668 cached, 2 fetched, 0 failed, 0 below threshold
+geocoder: 672 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      58  (43 on an exact rent match)
-newly recorded   0
+pairs found      60  (47 on an exact rent match)
+newly recorded   2
 already measured 56
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+     1.7h  first_seen->first_seen   building+beds+price          200 WATER STREET, New York, NY, US #307 $3,950
+     1.7h  first_seen->first_seen   building+beds+price          200 WATER STREET, New York, NY, US #3102 $5,350
+
 == lead time ==
-  measured               9
-  pending                1254
+  measured               11
+  pending                1278
   excluded_mixed_basis   50
-  median_hours           0.5
-  mean_hours             0.7
+  median_hours           1.5
+  mean_hours             0.9
   p10_hours              -0.4
   p90_hours              1.9
-  share_ahead            0.667
+  share_ahead            0.727
   share_ahead_24h        0.0
   share_ahead_72h        0.0
-  basis                  {'first_seen->first_seen': 9}
-  vs                     {'nybits': 59}
+  basis                  {'first_seen->first_seen': 11}
+  vs                     {'nybits': 61}
   caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
