@@ -1,27 +1,44 @@
-last_run: 2026-09-05T07:16:21Z
-commit: c2fad434d8cfed899bb6abfacfdc4f20fa521040
+last_run: 2026-09-05T07:31:09Z
+commit: dd7a69ac68315a57870e20798aa79c4fa9c71bc9
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    31     0     0     0      3
-nybits                         y   341     0     0     0      0
+nybits                         y   345    88     0    84      0
 tfcornerstone                  y   139     0     0     0     27
 stuytown                       y   100     0     8     0      0
 rockrose                       y    53     0     0     0      0
 
-geocoder: 674 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 674 cached, 4 fetched, 0 failed, 0 below threshold
 
-pairs found      60  (48 on an exact rent match)
-newly recorded   0
+pairs found      133  (108 on an exact rent match)
+newly recorded   74
 already measured 58
 unusable         0
-implausible      2  (> 60d apart -- probably not the same apartment)
+implausible      1  (> 60d apart -- probably not the same apartment)
+
+     lead  basis                    match                        listing
+   111.8h  censored:present-at-first-crawl building+beds+price          45 WALL STREET, New York, NY, USA #1610 $4,660
+   111.8h  censored:present-at-first-crawl building+beds+price          45 WALL STREET, New York, NY, USA #1921 $4,125
+   111.8h  censored:present-at-first-crawl building+beds+price          45 WALL STREET, New York, NY, USA #2219 $4,395
+   111.8h  censored:present-at-first-crawl building+beds+price          45 WALL STREET, New York, NY, USA #2402 $3,730
+   111.8h  censored:present-at-first-crawl building+beds+price          4720 CENTER BOULEVARD, Long Island #1012 $3,695
+   111.8h  censored:present-at-first-crawl building+beds+price          4720 CENTER BOULEVARD, Long Island #1901 $6,525
+   111.8h  censored:present-at-first-crawl building+beds+price          4720 CENTER BOULEVARD, Long Island #2405 $8,345
+   111.8h  censored:present-at-first-crawl building+beds+price          2 GOLD STREET, New York, NY, USA #411 $3,980
+   111.8h  censored:present-at-first-crawl building+beds+price          2 GOLD STREET, New York, NY, USA #4302 $5,360
+   111.8h  censored:present-at-first-crawl building+beds+price          2 GOLD STREET, New York, NY, USA #4603 $8,580
+   111.8h  censored:present-at-first-crawl building+beds+price          455 WEST 37 STREET, New York, NY,  #711 $4,715
+   111.8h  censored:present-at-first-crawl building+beds+price          455 WEST 37 STREET, New York, NY,  #1025 $4,010
+   111.8h  censored:present-at-first-crawl building+beds+price          95 HORATIO STREET, New York, NY, U #606 $7,495
+   111.8h  censored:present-at-first-crawl building+beds+price          340 EAST 34 STREET, New York, NY,  #2J $3,950
+   111.8h  censored:present-at-first-crawl building+beds+price          505 WEST 37 STREET, New York, NY,  #2808 $3,895
 
 == lead time ==
   measured               12
-  pending                1295
-  excluded_mixed_basis   50
+  pending                1309
+  excluded_mixed_basis   124
   median_hours           1.0
   mean_hours             0.8
   p10_hours              -0.4
@@ -30,7 +47,7 @@ implausible      2  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.0
   share_ahead_72h        0.0
   basis                  {'first_seen->first_seen': 12}
-  vs                     {'nybits': 62}
+  vs                     {'nybits': 136}
   caveat                 small sample
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
