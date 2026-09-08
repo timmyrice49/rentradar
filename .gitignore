@@ -9,4 +9,8 @@ venv/
 *.db
 *.db-wal
 *.db-shm
+
+# ...except that daily backup, which is the entire disaster-recovery story.
+!data/rentradar.db
+
 /tmp/
