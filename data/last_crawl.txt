@@ -1,5 +1,5 @@
-last_run: 2026-09-10T02:17:47Z
-commit: a78f066ebfff45d1d50d9870729633ff2d70178f
+last_run: 2026-09-10T02:45:30Z
+commit: 6bed00cfbab9a2ad90a07ec8b82b61cdc50645bc
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
@@ -7,7 +7,7 @@ stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   343     0     0     0      0
 tfcornerstone                  y   139     0     0     0     27
-stuytown                       y   100     1     6     1      0
+stuytown                       y   100     0     6     0      0
 rockrose                       y    56     0     0     0      0
 
 geocoder: 675 cached, 0 fetched, 0 failed, 0 below threshold
