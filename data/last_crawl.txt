@@ -1,11 +1,11 @@
-last_run: 2026-09-11T11:19:07Z
-commit: fc0fa8321e44278c8078b2443826d8d9183fa85d
+last_run: 2026-09-11T11:43:44Z
+commit: 8d2a7e4bf6c9918d0061792ef0e261749e61b89b
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    27     0     0     0      0
-nybits                         y   335     0     1     1      0
+nybits                         y   335     0     2     2      0
 tfcornerstone                  y   132     0     0     0     28
 stuytown                       y   100     0     4     0      0
 rockrose                       y    59     0     0     0      0
