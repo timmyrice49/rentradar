@@ -1,5 +1,5 @@
-last_run: 2026-09-11T19:54:47Z
-commit: f7fd30e5f3174ba66ea4b104cfe786cef9cffbca
+last_run: 2026-09-11T20:16:36Z
+commit: a45e5e3a6f7c8f87550f437c929d913295ba912d
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
@@ -8,9 +8,9 @@ nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   330     0     0     0      0
 tfcornerstone                  y   132     0     0     0     28
 stuytown                       y   100     0     4     0      0
-rockrose                       y    60     0     0     0      0
+rockrose                       n     0     0     0     0      0   rockrose: no unit links matched on 1 index page(s) -- rockrose: TimeoutError for https://rockrose.com/availabilities/
 
-geocoder: 659 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 599 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      165  (134 on an exact rent match)
 newly recorded   0
