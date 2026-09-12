@@ -1,15 +1,15 @@
 == inventory ==
-  listings_total         2224
+  listings_total         2227
   listings_active        649
-  with_bbl               2177
+  with_bbl               2180
   with_unit              437
   high_confidence        394
-  events                 11182
+  events                 11198
   distinct_buildings     260
 
 == lead time vs aggregators ==
   measured               35
-  pending                2049
+  pending                2052
   excluded_mixed_basis   140
   median_hours           1.7
   mean_hours             6.0
@@ -23,15 +23,15 @@
   caveat                 None
 
 == recent crawls ==
+  2026-09-12T19:55:20+00:00  rockrose                 ok=1 raw=59    new=0     
+  2026-09-12T19:55:19+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-09-12T19:55:19+00:00  tfcornerstone            ok=1 raw=132   new=0     
+  2026-09-12T19:54:32+00:00  nybits                   ok=1 raw=329   new=3     
+  2026-09-12T19:54:31+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
+  2026-09-12T19:54:31+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-09-12T19:42:27+00:00  rockrose                 ok=1 raw=59    new=0     
   2026-09-12T19:42:27+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-09-12T19:42:27+00:00  tfcornerstone            ok=1 raw=132   new=0     
   2026-09-12T19:41:40+00:00  nybits                   ok=1 raw=329   new=1     
   2026-09-12T19:41:40+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
   2026-09-12T19:41:39+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-09-12T19:27:46+00:00  rockrose                 ok=1 raw=59    new=0     
-  2026-09-12T19:27:45+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-09-12T19:27:45+00:00  tfcornerstone            ok=1 raw=132   new=0     
-  2026-09-12T19:26:58+00:00  nybits                   ok=1 raw=329   new=0     
-  2026-09-12T19:26:57+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
-  2026-09-12T19:26:56+00:00  stonehenge               ok=1 raw=10    new=0     
