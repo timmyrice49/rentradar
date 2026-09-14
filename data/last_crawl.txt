@@ -1,16 +1,16 @@
-last_run: 2026-09-14T04:46:25Z
-commit: f3346dfca482a4e46f0325c04247d7bf376c565f
+last_run: 2026-09-14T05:00:32Z
+commit: c044852b9bb3ccdb75420d3eb10fbf98a6d76ac0
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
-stonehenge                     y    10     0     0     0      0
+stonehenge                     n     0     0     0     0      0   stonehenge: URLError for https://www.stonehengenyc.com/apartments
 nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   328     0     0     0      0
 tfcornerstone                  y   132     0     0     0     28
 stuytown                       y   100     0     6     0      0
 rockrose                       y    59     0     0     0      0
 
-geocoder: 656 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 646 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      175  (141 on an exact rent match)
 newly recorded   0
