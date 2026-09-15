@@ -1,36 +1,39 @@
-last_run: 2026-09-15T19:01:01Z
-commit: 7f858eab697508812a9696fafef66768379b5e1a
+last_run: 2026-09-15T19:20:16Z
+commit: 29f4643cd4055b6698dab8ac03b1ff36cf8502e1
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    27     0     0     0      0
-nybits                         n     0     0     0     0      0   nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
+nybits                         y   331     4     1     4      0
 tfcornerstone                  y   132     0     0     0     28
 stuytown                       y   100     0     6     0      0
 rockrose                       y    60     0     0     0      0
 
-geocoder: 329 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 660 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      178  (142 on an exact rent match)
-newly recorded   0
+pairs found      179  (143 on an exact rent match)
+newly recorded   1
 already measured 177
 unusable         0
 implausible      1  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+     2.0h  first_seen->first_seen   building+beds+price          666 GREENWICH STREET, New York, NY #556 $10,200
+
 == lead time ==
-  measured               36
-  pending                2256
+  measured               37
+  pending                2259
   excluded_mixed_basis   143
-  median_hours           1.6
-  mean_hours             5.8
+  median_hours           1.7
+  mean_hours             5.7
   p10_hours              -49.0
   p90_hours              3.0
-  share_ahead            0.639
-  share_ahead_24h        0.083
-  share_ahead_72h        0.056
-  basis                  {'first_seen->first_seen': 36}
-  vs                     {'nybits': 179}
+  share_ahead            0.649
+  share_ahead_24h        0.081
+  share_ahead_72h        0.054
+  basis                  {'first_seen->first_seen': 37}
+  vs                     {'nybits': 180}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
