@@ -1,36 +1,39 @@
-last_run: 2026-09-18T21:54:33Z
-commit: be6669b3498c2ee04c45906eb4917e50daa98c54
+last_run: 2026-09-18T22:16:27Z
+commit: 3e26141fa960a43a2df1a7b5d40911496f8fb416
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    27     0     0     0      0
-nybits                         n     0     0     0     0      0   nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
+nybits                         y   333    10     2    10      0
 tfcornerstone                  y   137     0     0     0     29
 stuytown                       y   100     0     4     0      0
-rockrose                       y    60     0     0     0      0
+rockrose                       y    60     1     0     1      0
 
-geocoder: 334 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 666 cached, 1 fetched, 0 failed, 0 below threshold
 
-pairs found      217  (167 on an exact rent match)
-newly recorded   0
+pairs found      218  (168 on an exact rent match)
+newly recorded   1
 already measured 216
 unusable         0
 implausible      1  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+    -0.0h  first_seen->first_seen   building+beds+price          47-05 CENTER BOULEVARD, Long Islan #1804 $4,660
+
 == lead time ==
-  measured               41
-  pending                2660
+  measured               42
+  pending                2670
   excluded_mixed_basis   178
-  median_hours           1.7
-  mean_hours             13.4
+  median_hours           1.6
+  mean_hours             13.1
   p10_hours              -28.0
   p90_hours              3.0
-  share_ahead            0.659
-  share_ahead_24h        0.098
-  share_ahead_72h        0.073
-  basis                  {'first_seen->first_seen': 41}
-  vs                     {'nybits': 219}
+  share_ahead            0.643
+  share_ahead_24h        0.095
+  share_ahead_72h        0.071
+  basis                  {'first_seen->first_seen': 42}
+  vs                     {'nybits': 220}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
