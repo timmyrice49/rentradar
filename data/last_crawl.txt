@@ -1,16 +1,16 @@
-last_run: 2026-09-19T05:15:24Z
-commit: 78df3fec21da059e9882d3d0dabe58c7c4462d2c
+last_run: 2026-09-19T05:31:00Z
+commit: 160ab0520e8ad5d702592a95b2141f379bffe3f8
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
-nyc_housing_connect            n     0     0     0     0      0   nyc_housing_connect: HTTP 500 for https://data.cityofnewyork.us/resource/vy5i-a666.json?%24limit=1000&%24order=lottery_start_date+DESC&%24where=development_type%3D%27Rental%27
+nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   332     0     0     0      0
 tfcornerstone                  y   137     0     0     0     29
 stuytown                       y   100     0     4     0      0
 rockrose                       y    60     0     0     0      0
 
-geocoder: 639 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 666 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      218  (168 on an exact rent match)
 newly recorded   0
