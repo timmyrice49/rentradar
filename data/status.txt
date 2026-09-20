@@ -4,7 +4,7 @@
   with_bbl               2903
   with_unit              495
   high_confidence        443
-  events                 16260
+  events                 16266
   distinct_buildings     268
 
 == lead time vs aggregators ==
@@ -23,15 +23,15 @@
   caveat                 None
 
 == recent crawls ==
+  2026-09-20T09:31:31+00:00  rockrose                 ok=1 raw=55    new=0     
+  2026-09-20T09:31:31+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-09-20T09:31:30+00:00  tfcornerstone            ok=1 raw=137   new=0     
+  2026-09-20T09:30:43+00:00  nybits                   ok=1 raw=327   new=0     
+  2026-09-20T09:30:42+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
+  2026-09-20T09:30:42+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-09-20T09:15:23+00:00  rockrose                 ok=1 raw=55    new=0     
   2026-09-20T09:15:22+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-09-20T09:15:22+00:00  tfcornerstone            ok=1 raw=137   new=0     
   2026-09-20T09:14:35+00:00  nybits                   ok=1 raw=327   new=0     
   2026-09-20T09:14:34+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
   2026-09-20T09:14:34+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-09-20T08:55:38+00:00  rockrose                 ok=1 raw=55    new=0     
-  2026-09-20T08:55:38+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-09-20T08:55:38+00:00  tfcornerstone            ok=1 raw=137   new=0     
-  2026-09-20T08:54:51+00:00  nybits                   ok=1 raw=327   new=0     
-  2026-09-20T08:54:50+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
-  2026-09-20T08:54:50+00:00  stonehenge               ok=1 raw=10    new=0     
