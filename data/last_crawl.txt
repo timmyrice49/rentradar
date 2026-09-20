@@ -1,5 +1,5 @@
-last_run: 2026-09-20T21:31:38Z
-commit: e838d5b27c89141f666e337277f4e9f63fb568e0
+last_run: 2026-09-20T21:45:38Z
+commit: 609fff544d0697e3babccb54beafee7d6a793ace
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
@@ -7,7 +7,7 @@ stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    27     0     0     0      0
 nybits                         n     0     0     0     0      0   nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
 tfcornerstone                  y   137     0     0     0     29
-stuytown                       y   100     0     6     0      0
+stuytown                       y   100     0     7     1      0
 rockrose                       y    57     0     0     0      0
 
 geocoder: 331 cached, 0 fetched, 0 failed, 0 below threshold
