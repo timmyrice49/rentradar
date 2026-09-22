@@ -1,5 +1,5 @@
-last_run: 2026-09-21T23:54:28Z
-commit: 729a89ffe7c61e853c4f3ca9cf55310a0215fdc9
+last_run: 2026-09-22T00:22:32Z
+commit: 3f1540b2612f2a19c0e9c623b2f498df4e31e8d7
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
@@ -8,9 +8,9 @@ nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   333     0     0     0      0
 tfcornerstone                  y   137     0     0     0     29
 stuytown                       y   100     0     6     0      0
-rockrose                       y    58     0     0     0      0
+rockrose                       y    57     0     0     1      0
 
-geocoder: 665 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 664 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      227  (175 on an exact rent match)
 newly recorded   0
