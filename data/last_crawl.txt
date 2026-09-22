@@ -1,5 +1,5 @@
-last_run: 2026-09-22T22:55:45Z
-commit: e4f6ec1acdaa864be7e684ef1a4cebe66f5817e8
+last_run: 2026-09-22T23:15:05Z
+commit: 3b63e5404fd198421a72003b84d16d5e5588e93b
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
@@ -8,29 +8,32 @@ nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   345     0     0     0      0
 tfcornerstone                  y   137     0     0     0     29
 stuytown                       y   100     0     6     0      0
-rockrose                       y    57     0     0     0      0
+rockrose                       y    57     2     0     2      0
 
 geocoder: 676 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      227  (175 on an exact rent match)
-newly recorded   0
-already measured 226
+newly recorded   1
+already measured 225
 unusable         0
 implausible      1  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+  -514.0h  first_seen->first_seen   building+beds+near-price     110 HORATIO STREET, New York, NY,  #509 $5,795
+
 == lead time ==
-  measured               47
-  pending                2977
+  measured               48
+  pending                2978
   excluded_mixed_basis   184
-  median_hours           1.5
-  mean_hours             5.3
-  p10_hours              -49.0
+  median_hours           1.3
+  mean_hours             -5.5
+  p10_hours              -97.3
   p90_hours              3.0
-  share_ahead            0.617
-  share_ahead_24h        0.085
-  share_ahead_72h        0.064
-  basis                  {'first_seen->first_seen': 47}
-  vs                     {'nybits': 231}
+  share_ahead            0.604
+  share_ahead_24h        0.083
+  share_ahead_72h        0.062
+  basis                  {'first_seen->first_seen': 48}
+  vs                     {'nybits': 232}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
