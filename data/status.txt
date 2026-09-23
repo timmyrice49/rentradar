@@ -4,7 +4,7 @@
   with_bbl               3164
   with_unit              505
   high_confidence        453
-  events                 18327
+  events                 18333
   distinct_buildings     271
 
 == lead time vs aggregators ==
@@ -23,15 +23,15 @@
   caveat                 None
 
 == recent crawls ==
+  2026-09-23T07:16:58+00:00  rockrose                 ok=1 raw=57    new=0     
+  2026-09-23T07:16:58+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-09-23T07:16:58+00:00  tfcornerstone            ok=1 raw=137   new=0     
+  2026-09-23T07:16:11+00:00  nybits                   ok=0 raw=0     new=0     nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
+  2026-09-23T07:16:10+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
+  2026-09-23T07:16:10+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-09-23T06:48:09+00:00  rockrose                 ok=1 raw=57    new=0     
   2026-09-23T06:48:08+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-09-23T06:48:08+00:00  tfcornerstone            ok=1 raw=137   new=0     
   2026-09-23T06:47:21+00:00  nybits                   ok=1 raw=342   new=0     
   2026-09-23T06:47:20+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
   2026-09-23T06:47:20+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-09-23T06:21:26+00:00  rockrose                 ok=1 raw=57    new=0     
-  2026-09-23T06:21:26+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-09-23T06:21:26+00:00  tfcornerstone            ok=1 raw=137   new=0     
-  2026-09-23T06:20:39+00:00  nybits                   ok=1 raw=342   new=0     
-  2026-09-23T06:20:35+00:00  nyc_housing_connect      ok=1 raw=27    new=0     
-  2026-09-23T06:20:35+00:00  stonehenge               ok=1 raw=10    new=0     
