@@ -1,29 +1,22 @@
-last_run: 2026-09-25T04:20:58Z
-commit: 05ccd2303c67c10d83981710c8c24498de04d5ff
+last_run: 2026-09-25T04:46:13Z
+commit: 4aacd038cd8f37adb6f4cc206fb36a5445f28afd
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    27     0     0     0      0
 nybits                         y   346     0     0     0      0
-tfcornerstone                  y   133    26    19    33     33
+tfcornerstone                  y   133     0     0     0     33
 stuytown                       y   100     0     6     0      0
 rockrose                       y    51     0     0     0      0
 
 geocoder: 667 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      238  (174 on an exact rent match)
-newly recorded   5
-already measured 231
+newly recorded   0
+already measured 236
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
-
-     lead  basis                    match                        listing
-   111.8h  censored:present-at-first-crawl building+beds+near-price     4545 CENTER BOULEVARD, Long Island #3601 $6,595
-  -303.6h  listed_at->first_seen    building+beds+near-price     4545 CENTER BOULEVARD, Long Island #505 $4,065
-  -303.6h  listed_at->first_seen    building+beds+near-price     4610 CENTER BOULEVARD, Long Island #2507 $3,785
-  -472.4h  listed_at->first_seen    building+beds+near-price     4615 CENTER BOULEVARD, Long Island #909 $4,135
-  -472.4h  listed_at->first_seen    building+beds+near-price     4545 CENTER BOULEVARD, Long Island #901 $6,140
 
 == lead time ==
   measured               51
