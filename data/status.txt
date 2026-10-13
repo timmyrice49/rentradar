@@ -1,16 +1,16 @@
 == inventory ==
-  listings_total         5172
-  listings_active        656
-  with_bbl               5097
-  with_unit              685
-  high_confidence        615
-  events                 25878
-  distinct_buildings     307
+  listings_total         5277
+  listings_active        657
+  with_bbl               5202
+  with_unit              686
+  high_confidence        616
+  events                 26109
+  distinct_buildings     311
 
 == lead time vs aggregators ==
   measured               84
-  pending                4821
-  excluded_mixed_basis   267
+  pending                4925
+  excluded_mixed_basis   268
   median_hours           1.7
   mean_hours             3.9
   p10_hours              -160.8
@@ -19,19 +19,19 @@
   share_ahead_24h        0.131
   share_ahead_72h        0.107
   basis                  {'first_seen->first_seen': 69, 'listed_at->listed_at': 15}
-  vs                     {'nybits': 351}
+  vs                     {'nybits': 352}
   caveat                 None
 
 == recent crawls ==
+  2026-10-13T22:30:13+00:00  rockrose                 ok=1 raw=48    new=0     
+  2026-10-13T22:30:13+00:00  stuytown                 ok=1 raw=100   new=1     
+  2026-10-13T22:30:13+00:00  tfcornerstone            ok=1 raw=143   new=0     
+  2026-10-13T22:29:24+00:00  nybits                   ok=1 raw=341   new=104   
+  2026-10-13T22:29:23+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
+  2026-10-13T22:29:23+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-10-13T17:49:55+00:00  rockrose                 ok=1 raw=49    new=1     
   2026-10-13T17:49:55+00:00  stuytown                 ok=1 raw=100   new=3     
   2026-10-13T17:49:54+00:00  tfcornerstone            ok=1 raw=143   new=0     
   2026-10-13T17:49:08+00:00  nybits                   ok=0 raw=0     new=0     nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
   2026-10-13T17:49:06+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
   2026-10-13T17:49:05+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-10-13T10:44:37+00:00  rockrose                 ok=1 raw=49    new=0     
-  2026-10-13T10:44:37+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-10-13T10:44:37+00:00  tfcornerstone            ok=1 raw=143   new=0     
-  2026-10-13T10:43:50+00:00  nybits                   ok=1 raw=339   new=0     
-  2026-10-13T10:43:48+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
-  2026-10-13T10:43:48+00:00  stonehenge               ok=1 raw=10    new=0     
