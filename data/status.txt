@@ -1,16 +1,16 @@
 == inventory ==
-  listings_total         5424
+  listings_total         5426
   listings_active        659
-  with_bbl               5349
+  with_bbl               5351
   with_unit              693
   high_confidence        623
-  events                 26545
+  events                 26553
   distinct_buildings     313
 
 == lead time vs aggregators ==
   measured               85
-  pending                5066
-  excluded_mixed_basis   273
+  pending                5067
+  excluded_mixed_basis   274
   median_hours           1.7
   mean_hours             -1.0
   p10_hours              -198.0
@@ -19,19 +19,19 @@
   share_ahead_24h        0.129
   share_ahead_72h        0.106
   basis                  {'first_seen->first_seen': 70, 'listed_at->listed_at': 15}
-  vs                     {'nybits': 358}
+  vs                     {'nybits': 359}
   caveat                 None
 
 == recent crawls ==
+  2026-10-15T09:11:21+00:00  rockrose                 ok=1 raw=44    new=0     
+  2026-10-15T09:11:21+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-10-15T09:11:20+00:00  tfcornerstone            ok=1 raw=143   new=0     
+  2026-10-15T09:10:33+00:00  nybits                   ok=1 raw=347   new=2     
+  2026-10-15T09:10:32+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
+  2026-10-15T09:10:31+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-10-15T04:06:42+00:00  rockrose                 ok=1 raw=44    new=0     
   2026-10-15T04:06:42+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-10-15T04:06:41+00:00  tfcornerstone            ok=1 raw=143   new=0     
   2026-10-15T04:05:54+00:00  nybits                   ok=1 raw=347   new=3     
   2026-10-15T04:05:53+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
   2026-10-15T04:05:53+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-10-14T23:53:35+00:00  rockrose                 ok=1 raw=44    new=2     
-  2026-10-14T23:53:35+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-10-14T23:53:34+00:00  tfcornerstone            ok=1 raw=143   new=0     
-  2026-10-14T23:52:46+00:00  nybits                   ok=1 raw=347   new=44    
-  2026-10-14T23:52:45+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
-  2026-10-14T23:52:45+00:00  stonehenge               ok=1 raw=10    new=0     

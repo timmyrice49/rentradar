@@ -1,27 +1,30 @@
-last_run: 2026-10-15T04:07:27Z
-commit: d27ae2791b5bcd4be299303e73d5fac2c3557ca1
+last_run: 2026-10-15T09:12:06Z
+commit: cda5f6fa58b90ad20fded1a9a0c7b586e0f751d4
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    25     0     0     0      1
-nybits                         y   347     3     0     3      0
+nybits                         y   347     2     0     2      0
 tfcornerstone                  y   143     0     0     0     31
-stuytown                       y   100     0     5     1      0
+stuytown                       y   100     0     4     0      0
 rockrose                       y    44     0     0     0      0
 
 geocoder: 669 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      339  (264 on an exact rent match)
-newly recorded   0
+pairs found      340  (264 on an exact rent match)
+newly recorded   1
 already measured 338
 unusable         0
 implausible      1  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+  1071.5h  censored:present-at-first-crawl building+beds+near-price     250 NORTH 10 STREET, Brooklyn, NY, #109 $3,950
+
 == lead time ==
   measured               85
-  pending                5066
-  excluded_mixed_basis   273
+  pending                5067
+  excluded_mixed_basis   274
   median_hours           1.7
   mean_hours             -1.0
   p10_hours              -198.0
@@ -30,7 +33,7 @@ implausible      1  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.129
   share_ahead_72h        0.106
   basis                  {'first_seen->first_seen': 70, 'listed_at->listed_at': 15}
-  vs                     {'nybits': 358}
+  vs                     {'nybits': 359}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
