@@ -1,36 +1,53 @@
-last_run: 2026-10-16T04:03:20Z
-commit: 807df2228357a6c991010daf2a2c8d4926d9907f
+last_run: 2026-10-16T09:04:42Z
+commit: 86479d54b8cbb86295bef6539a8f822df215d06d
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
-nyc_housing_connect            n     0     0     0     0      0   nyc_housing_connect: HTTP 503 for https://data.cityofnewyork.us/resource/vy5i-a666.json?%24limit=1000&%24order=lottery_start_date+DESC&%24where=development_type%3D%27Rental%27
-nybits                         y   341     4     3     8      0
-tfcornerstone                  y   143     0     0     0     31
-stuytown                       y   100     0     5     1      0
+nyc_housing_connect            y    25     0     0     0      1
+nybits                         y   341    58     1    59      0
+tfcornerstone                  y   130    12    50    29     23
+stuytown                       y   100     0     4     0      0
 rockrose                       y    44     0     0     0      0
 
-geocoder: 638 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 650 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      339  (264 on an exact rent match)
-newly recorded   0
-already measured 338
+pairs found      351  (264 on an exact rent match)
+newly recorded   19
+already measured 331
 unusable         0
 implausible      1  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+  1095.4h  censored:present-at-first-crawl building+beds+near-price     4720 CENTER BOULEVARD, Long Island #711 $3,795
+  1012.0h  listed_at->listed_at     building+beds+price          606 WEST 57 STREET, New York, NY,  #1716 $5,395
+   927.7h  censored:present-at-first-crawl building+beds+near-price     606 WEST 57 STREET, New York, NY,  #809 $7,995
+   844.4h  listed_at->first_seen    building+beds+near-price     606 WEST 57 STREET, New York, NY,  #4105 $5,420
+   844.4h  listed_at->first_seen    building+beds+near-price     606 WEST 57 STREET, New York, NY,  #1825 $8,145
+   759.5h  censored:present-at-first-crawl building+beds+near-price     340 EAST 34 STREET, New York, NY,  #15L $5,375
+   111.8h  censored:present-at-first-crawl building+beds+near-price     2 GOLD STREET, New York, NY, USA #1210 $3,795
+     5.6h  listed_at->listed_at     building+beds+price          45 WALL STREET, New York, NY, USA #809 $4,820
+     5.6h  listed_at->listed_at     building+beds+price          2 GOLD STREET, New York, NY, USA #4202 $5,240
+     5.6h  listed_at->listed_at     building+beds+price          95 HORATIO STREET, New York, NY, U #635 $5,455
+     5.6h  listed_at->listed_at     building+beds+price          201 EAST 69 STREET, New York, NY,  #PHN $11,595
+     5.6h  listed_at->listed_at     building+beds+price          201 EAST 69 STREET, New York, NY,  #PHW $17,490
+     5.6h  listed_at->listed_at     building+beds+price          505 WEST 37 STREET, New York, NY,  #15F $3,730
+     5.6h  listed_at->listed_at     building+beds+price          4540 CENTER BOULEVARD, Long Island #2501 $6,595
+     5.6h  listed_at->listed_at     building+beds+price          33 BOND STREET, Brooklyn, NY, USA #1128 $4,430
+
 == lead time ==
-  measured               85
-  pending                5152
-  excluded_mixed_basis   274
-  median_hours           1.7
-  mean_hours             -1.0
-  p10_hours              -198.0
+  measured               94
+  pending                5203
+  excluded_mixed_basis   284
+  median_hours           1.9
+  mean_hours             10.4
+  p10_hours              -160.8
   p90_hours              102.4
-  share_ahead            0.6
-  share_ahead_24h        0.129
+  share_ahead            0.638
+  share_ahead_24h        0.128
   share_ahead_72h        0.106
-  basis                  {'first_seen->first_seen': 70, 'listed_at->listed_at': 15}
-  vs                     {'nybits': 359}
+  basis                  {'first_seen->first_seen': 70, 'listed_at->listed_at': 24}
+  vs                     {'nybits': 378}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
