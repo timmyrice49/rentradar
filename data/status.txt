@@ -1,15 +1,15 @@
 == inventory ==
-  listings_total         5823
-  listings_active        630
-  with_bbl               5747
+  listings_total         5833
+  listings_active        631
+  with_bbl               5757
   with_unit              711
   high_confidence        640
-  events                 27885
+  events                 27914
   distinct_buildings     321
 
 == lead time vs aggregators ==
   measured               94
-  pending                5443
+  pending                5453
   excluded_mixed_basis   286
   median_hours           1.9
   mean_hours             10.4
@@ -23,15 +23,15 @@
   caveat                 None
 
 == recent crawls ==
+  2026-10-20T05:25:31+00:00  rockrose                 ok=1 raw=43    new=0     
+  2026-10-20T05:25:31+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-10-20T05:25:30+00:00  tfcornerstone            ok=1 raw=130   new=0     
+  2026-10-20T05:24:44+00:00  nybits                   ok=1 raw=333   new=10    
+  2026-10-20T05:24:42+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
+  2026-10-20T05:24:42+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-10-20T00:44:31+00:00  rockrose                 ok=1 raw=43    new=0     
   2026-10-20T00:44:31+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-10-20T00:44:30+00:00  tfcornerstone            ok=1 raw=130   new=0     
   2026-10-20T00:43:43+00:00  nybits                   ok=1 raw=332   new=38    
   2026-10-20T00:43:40+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
   2026-10-20T00:43:40+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-10-19T21:44:17+00:00  rockrose                 ok=1 raw=43    new=0     
-  2026-10-19T21:44:17+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-10-19T21:44:17+00:00  tfcornerstone            ok=1 raw=130   new=0     
-  2026-10-19T21:43:30+00:00  nybits                   ok=1 raw=332   new=13    
-  2026-10-19T21:43:29+00:00  nyc_housing_connect      ok=1 raw=25    new=0     
-  2026-10-19T21:43:29+00:00  stonehenge               ok=1 raw=10    new=0     
