@@ -1,30 +1,26 @@
-last_run: 2026-10-31T00:10:26Z
-commit: 81325a4295dacf8b00980266f32d3a25949c3805
+last_run: 2026-10-31T05:49:41Z
+commit: bbcf5da042e609c4f88637b2e797ac2caafdf4da
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    25     0     0     0      1
-nybits                         y   311     9     1    12      0
+nybits                         y   311     2     2     4      0
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     0     4     0      0
-rockrose                       y    44     1     1     0      0
+stuytown                       y   100     0     5     1      0
+rockrose                       y    44     0     0     0      0
 
-geocoder: 618 cached, 1 fetched, 0 failed, 0 below threshold
+geocoder: 619 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      395  (293 on an exact rent match)
-newly recorded   2
-already measured 391
+newly recorded   0
+already measured 393
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
 
-     lead  basis                    match                        listing
-    -3.0h  first_seen->listed_at    building+beds+price          47-05 CENTER BOULEVARD, Long Islan #2805 $4,925
-  -264.7h  first_seen->first_seen   building+beds+near-price     47-05 CENTER BOULEVARD, Long Islan #1001 $6,795
-
 == lead time ==
   measured               126
-  pending                6437
+  pending                6439
   excluded_mixed_basis   304
   median_hours           2.0
   mean_hours             -39.8
