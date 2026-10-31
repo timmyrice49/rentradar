@@ -1,40 +1,42 @@
-last_run: 2026-10-31T17:14:27Z
-commit: f2f1137da6b5b0bfc7f7bb5953358182251b911d
+last_run: 2026-10-31T20:30:30Z
+commit: 856b63630afe218565d7a0ca4742c3780800842a
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    25     0     0     0      1
-nybits                         n     0     0     0     0      0   nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
+nybits                         y   307    23    14    41      0
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     3    14     4      0
-rockrose                       y    49     5     0     0      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    49     0     0     0      0
 
-geocoder: 313 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 620 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      397  (293 on an exact rent match)
-newly recorded   2
-already measured 393
+pairs found      401  (298 on an exact rent match)
+newly recorded   4
+already measured 395
 unusable         0
 implausible      2  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-  -597.7h  first_seen->first_seen   building+beds+near-price     615 EAST 14 STREET, New York, NY,  #1H $5,332
-  -867.9h  first_seen->first_seen   building+beds+near-price     43-10 CRESCENT STREET, Long Island #2317 $3,991
+     3.3h  first_seen->first_seen   building+beds+price          43-10 CRESCENT STREET, Long Island #2506 $4,952
+     3.3h  first_seen->first_seen   building+beds+price          43-10 CRESCENT STREET, Long Island #3908 $7,549
+    -1.7h  first_seen->listed_at    building+beds+price          43-22 QUEENS STREET, Long Island C #3104 $3,631
+    -1.8h  first_seen->listed_at    building+beds+price          666 GREENWICH STREET, New York, NY #545 $10,350
 
 == lead time ==
-  measured               128
-  pending                6445
-  excluded_mixed_basis   304
-  median_hours           1.9
-  mean_hours             -50.7
-  p10_hours              -492.3
+  measured               130
+  pending                6464
+  excluded_mixed_basis   306
+  median_hours           2.0
+  mean_hours             -49.8
+  p10_hours              -409.6
   p90_hours              43.9
-  share_ahead            0.609
-  share_ahead_24h        0.102
-  share_ahead_72h        0.086
-  basis                  {'first_seen->first_seen': 80, 'listed_at->listed_at': 48}
-  vs                     {'nybits': 432}
+  share_ahead            0.615
+  share_ahead_24h        0.1
+  share_ahead_72h        0.085
+  basis                  {'first_seen->first_seen': 82, 'listed_at->listed_at': 48}
+  vs                     {'nybits': 436}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
