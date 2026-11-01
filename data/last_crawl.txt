@@ -1,36 +1,39 @@
-last_run: 2026-11-01T09:48:01Z
-commit: 15f836591172d601d132578de55a890f7c45d884
+last_run: 2026-11-01T16:43:28Z
+commit: f68e3bab828e0991b43b3cd269c96506dbe9e0db
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    25     0     0     0      1
-nybits                         y   310     1     0     1      0
+nybits                         y   310    20     4    24      0
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     0     6     0      0
+stuytown                       y   100     0    14     0      0
 rockrose                       y    49     0     0     0      0
 
 geocoder: 623 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      401  (298 on an exact rent match)
-newly recorded   0
+pairs found      403  (299 on an exact rent match)
+newly recorded   1
 already measured 399
 unusable         0
-implausible      2  (> 60d apart -- probably not the same apartment)
+implausible      3  (> 60d apart -- probably not the same apartment)
+
+     lead  basis                    match                        listing
+   217.8h  first_seen->first_seen   building+beds+price          453 EAST 14 STREET, New York, NY,  #7E $5,388
 
 == lead time ==
-  measured               130
-  pending                6474
+  measured               131
+  pending                6493
   excluded_mixed_basis   306
   median_hours           2.0
-  mean_hours             -49.8
+  mean_hours             -47.8
   p10_hours              -409.6
   p90_hours              43.9
-  share_ahead            0.615
-  share_ahead_24h        0.1
-  share_ahead_72h        0.085
-  basis                  {'first_seen->first_seen': 82, 'listed_at->listed_at': 48}
-  vs                     {'nybits': 436}
+  share_ahead            0.618
+  share_ahead_24h        0.107
+  share_ahead_72h        0.092
+  basis                  {'first_seen->first_seen': 83, 'listed_at->listed_at': 48}
+  vs                     {'nybits': 437}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
