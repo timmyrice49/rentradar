@@ -1,16 +1,16 @@
-last_run: 2026-11-01T16:43:28Z
-commit: f68e3bab828e0991b43b3cd269c96506dbe9e0db
+last_run: 2026-11-01T20:53:37Z
+commit: 0e494f6afaa39885f8cbe0178f1d05a2955d5fe4
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    25     0     0     0      1
-nybits                         y   310    20     4    24      0
+nybits                         n     0     0     0     0      0   nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-studio.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-1br.html; nybits: HTTP 403 for https://www.nybits.com/search/downtown-manhattan-rentals-2br.html
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     0    14     0      0
-rockrose                       y    49     0     0     0      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    49     1     1     1      0
 
-geocoder: 623 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 313 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      403  (299 on an exact rent match)
 newly recorded   1
@@ -19,12 +19,12 @@ unusable         0
 implausible      3  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-   217.8h  first_seen->first_seen   building+beds+price          453 EAST 14 STREET, New York, NY,  #7E $5,388
+   -71.7h  first_seen->listed_at    building+beds+near-price     47-05 CENTER BOULEVARD, Long Islan #1606 $4,670
 
 == lead time ==
   measured               131
   pending                6493
-  excluded_mixed_basis   306
+  excluded_mixed_basis   307
   median_hours           2.0
   mean_hours             -47.8
   p10_hours              -409.6
@@ -33,7 +33,7 @@ implausible      3  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.107
   share_ahead_72h        0.092
   basis                  {'first_seen->first_seen': 83, 'listed_at->listed_at': 48}
-  vs                     {'nybits': 437}
+  vs                     {'nybits': 438}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
