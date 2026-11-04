@@ -1,27 +1,31 @@
-last_run: 2026-11-03T19:27:18Z
-commit: 8cefd9c25061b9553d7a41f5de084db42b378b46
+last_run: 2026-11-04T00:11:02Z
+commit: ab6da47887f714c94040a14bc9873b154e2893cb
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   310    64     6    71      0
+nybits                         y   310    83     1    84      0
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     0    81     1      0
-rockrose                       y    48     0     0     0      0
+stuytown                       y   100     0     7     1      0
+rockrose                       y    49     2     0     1      0
 
-geocoder: 642 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 643 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      401  (300 on an exact rent match)
-newly recorded   0
+pairs found      403  (302 on an exact rent match)
+newly recorded   2
 already measured 397
 unusable         0
 implausible      4  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+    -4.0h  first_seen->listed_at    building+beds+price          43-10 CRESCENT STREET, Long Island #3019 $4,636
+    -5.0h  first_seen->listed_at    building+beds+price          43-10 CRESCENT STREET, Long Island #402 $5,300
+
 == lead time ==
   measured               131
-  pending                6657
-  excluded_mixed_basis   307
+  pending                6740
+  excluded_mixed_basis   309
   median_hours           2.0
   mean_hours             -47.8
   p10_hours              -409.6
@@ -30,7 +34,7 @@ implausible      4  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.107
   share_ahead_72h        0.092
   basis                  {'first_seen->first_seen': 83, 'listed_at->listed_at': 48}
-  vs                     {'nybits': 438}
+  vs                     {'nybits': 440}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
