@@ -1,36 +1,41 @@
-last_run: 2026-11-05T16:44:39Z
-commit: 7faa12051ab447bc3a46ad7c4b8ca1361aa12467
+last_run: 2026-11-05T22:25:29Z
+commit: db07b8ae2a1012b71aae5cb4b34d897b4102bb62
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   305    19     7    31      0
+nybits                         y   304    70     3    74      0
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     0    85     1      0
-rockrose                       y    50     0     0     0      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    51     4     2     4      0
 
 geocoder: 639 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      404  (303 on an exact rent match)
-newly recorded   0
-already measured 400
+pairs found      407  (305 on an exact rent match)
+newly recorded   3
+already measured 399
 unusable         0
-implausible      4  (> 60d apart -- probably not the same apartment)
+implausible      5  (> 60d apart -- probably not the same apartment)
+
+     lead  basis                    match                        listing
+   307.8h  first_seen->listed_at    building+beds+near-price     7 PETER COOPER ROAD, New York, NY, #8A $5,566
+ -1110.5h  first_seen->first_seen   building+beds+near-price     43-22 QUEENS STREET, Long Island C #1407 $4,403
+ -1233.1h  first_seen->first_seen   building+beds+near-price     100 JANE STREET, New York, NY, USA #9H $5,170
 
 == lead time ==
-  measured               131
-  pending                6846
-  excluded_mixed_basis   313
-  median_hours           2.0
-  mean_hours             -47.8
-  p10_hours              -409.6
+  measured               133
+  pending                6917
+  excluded_mixed_basis   314
+  median_hours           1.9
+  mean_hours             -64.7
+  p10_hours              -492.3
   p90_hours              43.9
-  share_ahead            0.618
-  share_ahead_24h        0.107
-  share_ahead_72h        0.092
-  basis                  {'first_seen->first_seen': 83, 'listed_at->listed_at': 48}
-  vs                     {'nybits': 444}
+  share_ahead            0.609
+  share_ahead_24h        0.105
+  share_ahead_72h        0.09
+  basis                  {'first_seen->first_seen': 85, 'listed_at->listed_at': 48}
+  vs                     {'nybits': 447}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
