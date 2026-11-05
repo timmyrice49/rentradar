@@ -1,31 +1,26 @@
-last_run: 2026-11-04T21:12:17Z
-commit: eb8d563666621a2d7b37df59539d725ee4113d63
+last_run: 2026-11-05T01:30:30Z
+commit: e4bc57cb017ff6c8b1098aadb6164933814dd5e8
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   314    57     0    52      0
+nybits                         y   312    11     2    15      0
 tfcornerstone                  y   129     0     0     0     24
-stuytown                       y   100     0     8     2      0
-rockrose                       y    51     3     0     1      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    50     0     0     1      0
 
-geocoder: 649 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 646 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      407  (305 on an exact rent match)
-newly recorded   3
-already measured 400
+newly recorded   0
+already measured 403
 unusable         0
 implausible      4  (> 60d apart -- probably not the same apartment)
 
-     lead  basis                    match                        listing
-    -5.0h  first_seen->listed_at    building+beds+price          666 GREENWICH STREET, New York, NY #408 $8,350
-    -5.0h  first_seen->listed_at    building+beds+price          41 RIVER TERRACE, New York, NY, US #2202 $7,595
-    -5.0h  first_seen->listed_at    building+beds+price          41 RIVER TERRACE, New York, NY, US #3204 $10,700
-
 == lead time ==
   measured               131
-  pending                6814
+  pending                6825
   excluded_mixed_basis   313
   median_hours           2.0
   mean_hours             -47.8
