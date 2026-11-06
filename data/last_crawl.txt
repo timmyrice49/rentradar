@@ -1,48 +1,39 @@
-last_run: 2026-11-06T10:40:09Z
-commit: 9f8451fda11f69e2515f8c1d7902335104f73d60
+last_run: 2026-11-06T17:43:35Z
+commit: faeb0914ce957fb8189e73cf910bf94b3494a3b2
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   307    21     2    21      0
-tfcornerstone                  y   135     0     0     0     23
-stuytown                       y   100     0     6     0      0
+nybits                         y   305    25    17    44      0
+tfcornerstone                  y   134     0     0     1     23
+stuytown                       y   100     7    25     7      0
 rockrose                       y    51     0     0     0      0
 
-geocoder: 648 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 644 cached, 1 fetched, 0 failed, 0 below threshold
 
 pairs found      423  (321 on an exact rent match)
-newly recorded   10
-already measured 405
+newly recorded   1
+already measured 414
 unusable         0
 implausible      8  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-    10.2h  listed_at->listed_at     building+beds+price          4720 CENTER BOULEVARD, Long Island #1403 $6,195
-    10.2h  listed_at->listed_at     building+beds+price          4720 CENTER BOULEVARD, Long Island #2109 $5,285
-    10.2h  listed_at->listed_at     building+beds+price          4720 CENTER BOULEVARD, Long Island #2308 $5,395
-    10.2h  listed_at->listed_at     building+beds+price          455 WEST 37 STREET, New York, NY,  #1403 $4,351
-    10.2h  listed_at->listed_at     building+beds+price          455 WEST 37 STREET, New York, NY,  #1407 $4,795
-    10.2h  listed_at->listed_at     building+beds+price          455 WEST 37 STREET, New York, NY,  #PH5 $4,690
-    10.2h  listed_at->listed_at     building+beds+price          95 HORATIO STREET, New York, NY, U #611 $29,500
-    10.2h  listed_at->listed_at     building+beds+price          201 EAST 69 STREET, New York, NY,  #7N $5,935
-    10.2h  listed_at->listed_at     building+beds+price          505 WEST 37 STREET, New York, NY,  #9D $4,810
-    10.2h  listed_at->listed_at     building+beds+price          33 BOND STREET, Brooklyn, NY, USA #412 $5,625
+ -1414.9h  first_seen->first_seen   building+beds+near-price     635 EAST 14 STREET, New York, NY,  #7F $5,574
 
 == lead time ==
-  measured               143
-  pending                6989
+  measured               144
+  pending                7020
   excluded_mixed_basis   318
   median_hours           2.0
-  mean_hours             -59.4
+  mean_hours             -68.9
   p10_hours              -492.3
   p90_hours              11.5
-  share_ahead            0.636
-  share_ahead_24h        0.098
-  share_ahead_72h        0.084
-  basis                  {'first_seen->first_seen': 85, 'listed_at->listed_at': 58}
-  vs                     {'nybits': 461}
+  share_ahead            0.632
+  share_ahead_24h        0.097
+  share_ahead_72h        0.083
+  basis                  {'first_seen->first_seen': 86, 'listed_at->listed_at': 58}
+  vs                     {'nybits': 462}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
