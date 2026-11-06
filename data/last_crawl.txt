@@ -1,32 +1,33 @@
-last_run: 2026-11-05T22:25:29Z
-commit: db07b8ae2a1012b71aae5cb4b34d897b4102bb62
+last_run: 2026-11-06T02:47:07Z
+commit: 3eac18206d542925a0ee2b10d4a724b3972d1b21
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   304    70     3    74      0
-tfcornerstone                  y   129     0     0     0     24
+nybits                         y   305    35     1    35      0
+tfcornerstone                  y   135    30     4    25     23
 stuytown                       y   100     0     6     0      0
-rockrose                       y    51     4     2     4      0
+rockrose                       y    51     0     0     0      0
 
-geocoder: 639 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 646 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      407  (305 on an exact rent match)
-newly recorded   3
-already measured 399
+pairs found      413  (305 on an exact rent match)
+newly recorded   4
+already measured 402
 unusable         0
-implausible      5  (> 60d apart -- probably not the same apartment)
+implausible      7  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-   307.8h  first_seen->listed_at    building+beds+near-price     7 PETER COOPER ROAD, New York, NY, #8A $5,566
- -1110.5h  first_seen->first_seen   building+beds+near-price     43-22 QUEENS STREET, Long Island C #1407 $4,403
- -1233.1h  first_seen->first_seen   building+beds+near-price     100 JANE STREET, New York, NY, USA #9H $5,170
+     0.3h  first_seen->listed_at    building+beds+price          100 JANE STREET, New York, NY, USA #3N $4,895
+  -662.0h  listed_at->first_seen    building+beds+near-price     505 WEST 37 STREET, New York, NY,  #3502 $5,275
+ -1166.1h  listed_at->first_seen    building+beds+price          505 WEST 37 STREET, New York, NY,  #3108 $3,775
+ -1166.1h  listed_at->first_seen    building+beds+near-price     505 WEST 37 STREET, New York, NY,  #20F $3,820
 
 == lead time ==
   measured               133
-  pending                6917
-  excluded_mixed_basis   314
+  pending                6978
+  excluded_mixed_basis   318
   median_hours           1.9
   mean_hours             -64.7
   p10_hours              -492.3
@@ -35,7 +36,7 @@ implausible      5  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.105
   share_ahead_72h        0.09
   basis                  {'first_seen->first_seen': 85, 'listed_at->listed_at': 48}
-  vs                     {'nybits': 447}
+  vs                     {'nybits': 451}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
