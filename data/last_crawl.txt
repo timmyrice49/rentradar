@@ -1,26 +1,26 @@
-last_run: 2026-11-10T07:48:50Z
-commit: b8a554bf2ecc03f3a4c409f9b843584d774b01e3
+last_run: 2026-11-10T16:20:34Z
+commit: 29646f821687fff10f321b41c9530c4b6af6f656
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   297    16     1    17      0
+nybits                         y   298    20    21    40      0
 tfcornerstone                  y   133     0     0     0     23
-stuytown                       n     0     0     0     0      0   stuytown: HTTP 504 for https://units.stuytown.com/api/units?Order=low-price&page=0&itemsOnPage=100&PropertyName=Stuyvesant+Town_Peter+Cooper+Village
-rockrose                       y    51     0     0     0      0
+stuytown                       y   100     2    17     1      0
+rockrose                       y    49     0     0     2      0
 
-geocoder: 532 cached, 4 fetched, 0 failed, 0 below threshold
+geocoder: 635 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      429  (325 on an exact rent match)
+pairs found      430  (325 on an exact rent match)
 newly recorded   0
-already measured 420
+already measured 421
 unusable         0
 implausible      9  (> 60d apart -- probably not the same apartment)
 
 == lead time ==
   measured               145
-  pending                7205
+  pending                7227
   excluded_mixed_basis   322
   median_hours           2.0
   mean_hours             -76.6
