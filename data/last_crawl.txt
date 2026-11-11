@@ -1,27 +1,30 @@
-last_run: 2026-11-11T09:07:32Z
-commit: 585e8e53546a667d07fbdc2473b29ff4987bc3d5
+last_run: 2026-11-11T17:13:37Z
+commit: c2bed5d2c2e4c40f2d78785e3479e8b2ba2ec180
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
-nyc_housing_connect            n     0     0     0     0      0   nyc_housing_connect: HTTP 503 for https://data.cityofnewyork.us/resource/vy5i-a666.json?%24limit=1000&%24order=lottery_start_date+DESC&%24where=development_type%3D%27Rental%27
-nybits                         y   300     2     0     0      0
+nyc_housing_connect            y    45     0     0     0      4
+nybits                         y   301    55     3    57      0
 tfcornerstone                  y   133     0     0     0     23
-stuytown                       y   100     0     6     0      0
-rockrose                       y    49     0     0     0      0
+stuytown                       y   100     0    23     1      0
+rockrose                       y    48     0     0     1      0
 
-geocoder: 590 cached, 2 fetched, 0 failed, 0 below threshold
+geocoder: 637 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      430  (325 on an exact rent match)
-newly recorded   0
-already measured 421
+newly recorded   1
+already measured 419
 unusable         0
-implausible      9  (> 60d apart -- probably not the same apartment)
+implausible      10  (> 60d apart -- probably not the same apartment)
+
+     lead  basis                    match                        listing
+  -581.2h  first_seen->listed_at    building+beds+near-price     601 EAST 20 STREET, New York, NY,  #3E $5,308
 
 == lead time ==
   measured               145
-  pending                7285
-  excluded_mixed_basis   322
+  pending                7339
+  excluded_mixed_basis   323
   median_hours           2.0
   mean_hours             -76.6
   p10_hours              -492.3
@@ -30,7 +33,7 @@ implausible      9  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.097
   share_ahead_72h        0.083
   basis                  {'first_seen->first_seen': 87, 'listed_at->listed_at': 58}
-  vs                     {'nybits': 467}
+  vs                     {'nybits': 468}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
