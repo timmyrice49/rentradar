@@ -1,39 +1,39 @@
-last_run: 2026-11-11T17:13:37Z
-commit: c2bed5d2c2e4c40f2d78785e3479e8b2ba2ec180
+last_run: 2026-11-11T23:30:55Z
+commit: daa79164214300bee02662ff744bb6feea9375d9
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   301    55     3    57      0
+nybits                         y   297    31     3    39      0
 tfcornerstone                  y   133     0     0     0     23
-stuytown                       y   100     0    23     1      0
-rockrose                       y    48     0     0     1      0
+stuytown                       y   100     0     6     1      0
+rockrose                       y    46     2     1     4      0
 
-geocoder: 637 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 630 cached, 1 fetched, 0 failed, 0 below threshold
 
-pairs found      430  (325 on an exact rent match)
+pairs found      431  (326 on an exact rent match)
 newly recorded   1
-already measured 419
+already measured 420
 unusable         0
 implausible      10  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-  -581.2h  first_seen->listed_at    building+beds+near-price     601 EAST 20 STREET, New York, NY,  #3E $5,308
+    -0.0h  first_seen->first_seen   building+beds+price          43-10 CRESCENT STREET, Long Island #4003 $4,987
 
 == lead time ==
-  measured               145
-  pending                7339
+  measured               146
+  pending                7371
   excluded_mixed_basis   323
   median_hours           2.0
-  mean_hours             -76.6
+  mean_hours             -76.0
   p10_hours              -492.3
   p90_hours              11.5
-  share_ahead            0.628
-  share_ahead_24h        0.097
-  share_ahead_72h        0.083
-  basis                  {'first_seen->first_seen': 87, 'listed_at->listed_at': 58}
-  vs                     {'nybits': 468}
+  share_ahead            0.623
+  share_ahead_24h        0.096
+  share_ahead_72h        0.082
+  basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 58}
+  vs                     {'nybits': 469}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
