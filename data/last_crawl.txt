@@ -1,29 +1,26 @@
-last_run: 2026-11-11T23:30:55Z
-commit: daa79164214300bee02662ff744bb6feea9375d9
+last_run: 2026-11-12T04:08:44Z
+commit: 72de6c256594ed70027a47dee073f2318b815afd
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   297    31     3    39      0
+nybits                         y   297     2     0     2      0
 tfcornerstone                  y   133     0     0     0     23
-stuytown                       y   100     0     6     1      0
-rockrose                       y    46     2     1     4      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    46     0     0     0      0
 
-geocoder: 630 cached, 1 fetched, 0 failed, 0 below threshold
+geocoder: 631 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      431  (326 on an exact rent match)
-newly recorded   1
-already measured 420
+newly recorded   0
+already measured 421
 unusable         0
 implausible      10  (> 60d apart -- probably not the same apartment)
 
-     lead  basis                    match                        listing
-    -0.0h  first_seen->first_seen   building+beds+price          43-10 CRESCENT STREET, Long Island #4003 $4,987
-
 == lead time ==
   measured               146
-  pending                7371
+  pending                7373
   excluded_mixed_basis   323
   median_hours           2.0
   mean_hours             -76.0
