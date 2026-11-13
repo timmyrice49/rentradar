@@ -1,39 +1,50 @@
-last_run: 2026-11-13T01:31:51Z
-commit: 0e7bb4b5b10e834f3bcdbe39911a0b5f2829794a
+last_run: 2026-11-13T08:48:57Z
+commit: 7bff72d18ee8c4294e7ce81b1404432e4fdec9b8
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   299    11     3    13      0
-tfcornerstone                  y   133     0     0     0     23
-stuytown                       y   100     0     6     0      0
-rockrose                       y    46     1     1     1      0
+nybits                         y   298    35     1    37      0
+tfcornerstone                  y   141    27    21    27     27
+stuytown                       y   100     0     7     1      0
+rockrose                       y    46     0     0     0      0
 
-geocoder: 633 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 640 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      433  (327 on an exact rent match)
-newly recorded   1
+pairs found      447  (336 on an exact rent match)
+newly recorded   12
 already measured 420
 unusable         0
-implausible      12  (> 60d apart -- probably not the same apartment)
+implausible      15  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-    -3.0h  first_seen->listed_at    building+beds+price          43-22 QUEENS STREET, Long Island C #645 $5,894
+    10.5h  listed_at->first_seen    building+beds+price          4720 CENTER BOULEVARD, Long Island #308 $4,390
+    10.5h  listed_at->first_seen    building+beds+price          4720 CENTER BOULEVARD, Long Island #2610 $4,945
+    10.5h  listed_at->first_seen    building+beds+price          444 WEST 35 STREET, New York, NY,  #4A $4,365
+    10.5h  listed_at->first_seen    building+beds+price          505 WEST 37 STREET, New York, NY,  #24B $5,190
+    10.5h  listed_at->first_seen    building+beds+price          4615 CENTER BOULEVARD, Long Island #310 $6,425
+    10.5h  listed_at->first_seen    building+beds+price          4545 CENTER BOULEVARD, Long Island #1010 $7,850
+    10.5h  listed_at->first_seen    building+beds+price          606 WEST 57 STREET, New York, NY,  #1727 $4,155
+    10.5h  listed_at->first_seen    building+beds+price          606 WEST 57 STREET, New York, NY,  #2706 $8,030
+    10.5h  listed_at->first_seen    building+beds+price          250 NORTH 10 STREET, Brooklyn, NY, #417 $3,895
+  -327.2h  listed_at->listed_at     building+beds+near-price     4610 CENTER BOULEVARD, Long Island #1716 $4,295
+ -1335.0h  listed_at->first_seen    building+beds+near-price     4545 CENTER BOULEVARD, Long Island #2414 $4,365
+ -1335.0h  listed_at->first_seen    building+beds+near-price     606 WEST 57 STREET, New York, NY,  #3503 $10,290
 
 == lead time ==
-  measured               146
-  pending                7424
-  excluded_mixed_basis   324
+  measured               147
+  pending                7474
+  excluded_mixed_basis   335
   median_hours           2.0
-  mean_hours             -76.0
+  mean_hours             -77.7
   p10_hours              -492.3
   p90_hours              11.5
-  share_ahead            0.623
-  share_ahead_24h        0.096
+  share_ahead            0.619
+  share_ahead_24h        0.095
   share_ahead_72h        0.082
-  basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 58}
-  vs                     {'nybits': 470}
+  basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 59}
+  vs                     {'nybits': 482}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
