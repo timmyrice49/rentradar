@@ -1,18 +1,18 @@
-last_run: 2026-11-14T16:04:49Z
-commit: 722ef455d456f87160b6ca871885bf0dfa90f67e
+last_run: 2026-11-14T20:46:27Z
+commit: 41b85251eb070621311829981164d83763d6afab
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   301     0     0     0      0
+nybits                         y   301    33     4    37      0
 tfcornerstone                  y   141     0     0     0     27
-stuytown                       y   100     0    20     3      0
-rockrose                       y    45     0     0     0      0
+stuytown                       y   100     0     8     2      0
+rockrose                       y    45     1     0     1      0
 
 geocoder: 642 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      447  (334 on an exact rent match)
+pairs found      447  (336 on an exact rent match)
 newly recorded   0
 already measured 432
 unusable         0
@@ -20,7 +20,7 @@ implausible      15  (> 60d apart -- probably not the same apartment)
 
 == lead time ==
   measured               147
-  pending                7516
+  pending                7550
   excluded_mixed_basis   335
   median_hours           2.0
   mean_hours             -77.7
