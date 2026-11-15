@@ -1,27 +1,30 @@
-last_run: 2026-11-14T20:46:27Z
-commit: 41b85251eb070621311829981164d83763d6afab
+last_run: 2026-11-15T00:26:52Z
+commit: c6e793aa93024447202d52fa38a247a62e22fb7e
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   301    33     4    37      0
+nybits                         y   301    11     0    11      0
 tfcornerstone                  y   141     0     0     0     27
-stuytown                       y   100     0     8     2      0
-rockrose                       y    45     1     0     1      0
+stuytown                       y   100     0     7     1      0
+rockrose                       y    45     0     0     0      0
 
 geocoder: 642 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      447  (336 on an exact rent match)
-newly recorded   0
+pairs found      448  (337 on an exact rent match)
+newly recorded   1
 already measured 432
 unusable         0
 implausible      15  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+    -0.4h  first_seen->listed_at    building+beds+price          666 GREENWICH STREET, New York, NY #PH19 $14,250
+
 == lead time ==
   measured               147
-  pending                7550
-  excluded_mixed_basis   335
+  pending                7560
+  excluded_mixed_basis   336
   median_hours           2.0
   mean_hours             -77.7
   p10_hours              -492.3
@@ -30,7 +33,7 @@ implausible      15  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.095
   share_ahead_72h        0.082
   basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 59}
-  vs                     {'nybits': 482}
+  vs                     {'nybits': 483}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
