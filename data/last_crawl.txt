@@ -1,31 +1,26 @@
-last_run: 2026-11-19T22:06:43Z
-commit: dd879f67f98bde19581f7764013c4b1aa2fd44d2
+last_run: 2026-11-20T03:22:46Z
+commit: b75190b8c0b63e3ec6f75cfb086aacc0eaa6658b
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   298    36     4    43      0
+nybits                         y   298    35     2    37      0
 tfcornerstone                  y   141     0     0     0     27
-stuytown                       y   100     0     7     1      0
-rockrose                       y    45     3     2     4      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    45     0     0     0      0
 
 geocoder: 639 cached, 0 fetched, 0 failed, 0 below threshold
 
 pairs found      449  (340 on an exact rent match)
-newly recorded   3
-already measured 432
+newly recorded   0
+already measured 435
 unusable         0
 implausible      14  (> 60d apart -- probably not the same apartment)
 
-     lead  basis                    match                        listing
-    -3.0h  first_seen->listed_at    building+beds+price          43-10 CRESCENT STREET, Long Island #2003 $6,962
-    -6.0h  first_seen->listed_at    building+beds+price          200 WATER STREET, New York, NY, US #1101 $5,625
-    -6.0h  first_seen->listed_at    building+beds+price          666 GREENWICH STREET, New York, NY #538 $7,895
-
 == lead time ==
   measured               147
-  pending                7885
+  pending                7920
   excluded_mixed_basis   339
   median_hours           2.0
   mean_hours             -77.7
