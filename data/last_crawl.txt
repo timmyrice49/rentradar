@@ -1,34 +1,30 @@
-last_run: 2026-11-20T12:05:11Z
-commit: f2e15bcfd9a8e045aadf52286a4de6a1977ea30c
+last_run: 2026-11-20T20:27:22Z
+commit: 0bafee44f7cfbee26e2032298f521e443969fe16
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   299    21     5    25      0
-tfcornerstone                  y   125     7    11    25     23
-stuytown                       y   100     0     6     0      0
-rockrose                       y    45     0     0     0      0
+nybits                         y   295    53    16    73      0
+tfcornerstone                  y   125     0     0     0     23
+stuytown                       y   100     0    24     0      0
+rockrose                       y    46     2     1     2      0
 
-geocoder: 623 cached, 1 fetched, 0 failed, 0 below threshold
+geocoder: 621 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      456  (343 on an exact rent match)
-newly recorded   5
-already measured 431
+pairs found      457  (344 on an exact rent match)
+newly recorded   1
+already measured 436
 unusable         0
 implausible      20  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-     9.7h  listed_at->listed_at     building+beds+price          95 HORATIO STREET, New York, NY, U #422 $9,965
-     9.7h  listed_at->listed_at     building+beds+price          95 HORATIO STREET, New York, NY, U #7B $7,160
-     9.7h  listed_at->listed_at     building+beds+price          4610 CENTER BOULEVARD, Long Island #520 $4,425
-  -495.4h  listed_at->listed_at     building+beds+near-price     606 WEST 57 STREET, New York, NY,  #1605 $4,925
- -1335.1h  listed_at->first_seen    building+beds+near-price     4545 CENTER BOULEVARD, Long Island #2606 $6,295
+    -4.0h  first_seen->listed_at    building+beds+price          47-05 CENTER BOULEVARD, Long Islan #1707 $4,720
 
 == lead time ==
   measured               151
-  pending                7943
-  excluded_mixed_basis   340
+  pending                7997
+  excluded_mixed_basis   341
   median_hours           2.0
   mean_hours             -78.8
   p10_hours              -492.3
@@ -37,7 +33,7 @@ implausible      20  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.093
   share_ahead_72h        0.079
   basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 63}
-  vs                     {'nybits': 491}
+  vs                     {'nybits': 492}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
