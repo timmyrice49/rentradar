@@ -1,36 +1,43 @@
-last_run: 2026-11-20T03:22:46Z
-commit: b75190b8c0b63e3ec6f75cfb086aacc0eaa6658b
+last_run: 2026-11-20T12:05:11Z
+commit: f2e15bcfd9a8e045aadf52286a4de6a1977ea30c
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   298    35     2    37      0
-tfcornerstone                  y   141     0     0     0     27
+nybits                         y   299    21     5    25      0
+tfcornerstone                  y   125     7    11    25     23
 stuytown                       y   100     0     6     0      0
 rockrose                       y    45     0     0     0      0
 
-geocoder: 639 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 623 cached, 1 fetched, 0 failed, 0 below threshold
 
-pairs found      449  (340 on an exact rent match)
-newly recorded   0
-already measured 435
+pairs found      456  (343 on an exact rent match)
+newly recorded   5
+already measured 431
 unusable         0
-implausible      14  (> 60d apart -- probably not the same apartment)
+implausible      20  (> 60d apart -- probably not the same apartment)
+
+     lead  basis                    match                        listing
+     9.7h  listed_at->listed_at     building+beds+price          95 HORATIO STREET, New York, NY, U #422 $9,965
+     9.7h  listed_at->listed_at     building+beds+price          95 HORATIO STREET, New York, NY, U #7B $7,160
+     9.7h  listed_at->listed_at     building+beds+price          4610 CENTER BOULEVARD, Long Island #520 $4,425
+  -495.4h  listed_at->listed_at     building+beds+near-price     606 WEST 57 STREET, New York, NY,  #1605 $4,925
+ -1335.1h  listed_at->first_seen    building+beds+near-price     4545 CENTER BOULEVARD, Long Island #2606 $6,295
 
 == lead time ==
-  measured               147
-  pending                7920
-  excluded_mixed_basis   339
+  measured               151
+  pending                7943
+  excluded_mixed_basis   340
   median_hours           2.0
-  mean_hours             -77.7
+  mean_hours             -78.8
   p10_hours              -492.3
   p90_hours              11.5
-  share_ahead            0.619
-  share_ahead_24h        0.095
-  share_ahead_72h        0.082
-  basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 59}
-  vs                     {'nybits': 486}
+  share_ahead            0.623
+  share_ahead_24h        0.093
+  share_ahead_72h        0.079
+  basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 63}
+  vs                     {'nybits': 491}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
