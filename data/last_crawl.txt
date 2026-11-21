@@ -1,27 +1,30 @@
-last_run: 2026-11-21T16:42:46Z
-commit: 8bd8dc3a3394e4a58ad320890a6af58fbc3148a7
+last_run: 2026-11-21T21:56:59Z
+commit: 2037f4ceb30996131a056b10c3cd70fb56f6aee4
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   295     5     0     5      0
+nybits                         y   294    28     4    33      0
 tfcornerstone                  y   125     0     0     0     23
-stuytown                       y   100     0    24     1      0
-rockrose                       y    48     0     1     0      0
+stuytown                       y   100     0     6     0      0
+rockrose                       y    49     2     1     1      0
 
 geocoder: 623 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      458  (344 on an exact rent match)
-newly recorded   0
+pairs found      459  (346 on an exact rent match)
+newly recorded   1
 already measured 438
 unusable         0
 implausible      20  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+    -2.0h  first_seen->listed_at    building+beds+price          43-10 CRESCENT STREET, Long Island #305 $4,145
+
 == lead time ==
   measured               151
-  pending                8029
-  excluded_mixed_basis   342
+  pending                8058
+  excluded_mixed_basis   343
   median_hours           2.0
   mean_hours             -78.8
   p10_hours              -492.3
@@ -30,7 +33,7 @@ implausible      20  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.093
   share_ahead_72h        0.079
   basis                  {'first_seen->first_seen': 88, 'listed_at->listed_at': 63}
-  vs                     {'nybits': 493}
+  vs                     {'nybits': 494}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
