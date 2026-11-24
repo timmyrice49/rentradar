@@ -1,15 +1,15 @@
 == inventory ==
-  listings_total         8573
+  listings_total         8626
   listings_active        608
-  with_bbl               8478
+  with_bbl               8531
   with_unit              896
   high_confidence        808
-  events                 36266
+  events                 36400
   distinct_buildings     369
 
 == lead time vs aggregators ==
   measured               152
-  pending                8078
+  pending                8131
   excluded_mixed_basis   343
   median_hours           2.0
   mean_hours             -78.3
@@ -23,15 +23,15 @@
   caveat                 None
 
 == recent crawls ==
+  2026-11-24T00:56:57+00:00  rockrose                 ok=1 raw=48    new=0     
+  2026-11-24T00:56:56+00:00  stuytown                 ok=1 raw=100   new=0     
+  2026-11-24T00:56:56+00:00  tfcornerstone            ok=1 raw=125   new=0     
+  2026-11-24T00:56:09+00:00  nybits                   ok=1 raw=295   new=53    
+  2026-11-24T00:56:08+00:00  nyc_housing_connect      ok=1 raw=45    new=0     
+  2026-11-24T00:56:08+00:00  stonehenge               ok=1 raw=10    new=0     
   2026-11-23T13:11:19+00:00  rockrose                 ok=1 raw=49    new=0     
   2026-11-23T13:11:19+00:00  stuytown                 ok=1 raw=100   new=0     
   2026-11-23T13:11:18+00:00  tfcornerstone            ok=1 raw=125   new=0     
   2026-11-23T13:10:32+00:00  nybits                   ok=1 raw=294   new=0     
   2026-11-23T13:10:30+00:00  nyc_housing_connect      ok=1 raw=45    new=0     
   2026-11-23T13:10:30+00:00  stonehenge               ok=1 raw=10    new=0     
-  2026-11-23T03:14:04+00:00  rockrose                 ok=1 raw=49    new=0     
-  2026-11-23T03:14:04+00:00  stuytown                 ok=1 raw=100   new=0     
-  2026-11-23T03:14:04+00:00  tfcornerstone            ok=1 raw=125   new=0     
-  2026-11-23T03:13:17+00:00  nybits                   ok=1 raw=294   new=3     
-  2026-11-23T03:13:14+00:00  nyc_housing_connect      ok=1 raw=45    new=0     
-  2026-11-23T03:13:14+00:00  stonehenge               ok=1 raw=10    new=0     
