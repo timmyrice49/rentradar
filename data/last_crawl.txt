@@ -1,27 +1,30 @@
-last_run: 2026-11-25T14:38:58Z
-commit: 8980fb9fca1d5d9f6670a3272009a403c747c361
+last_run: 2026-11-25T23:22:55Z
+commit: eea9179a7f74c75d826b1746a9b88dcbb340a946
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   293    22     9    32      0
-tfcornerstone                  y   125     0     0     0     23
-stuytown                       y   100     0    24     3      0
-rockrose                       y    47     0     0     0      0
+nybits                         y   290    44     2    49      0
+tfcornerstone                  y   124     0     0     1     23
+stuytown                       y   100     0     6     2      0
+rockrose                       y    46     1     0     2      0
 
-geocoder: 620 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 614 cached, 1 fetched, 0 failed, 0 below threshold
 
-pairs found      460  (347 on an exact rent match)
-newly recorded   0
+pairs found      461  (348 on an exact rent match)
+newly recorded   1
 already measured 439
 unusable         0
 implausible      21  (> 60d apart -- probably not the same apartment)
 
+     lead  basis                    match                        listing
+    -7.0h  first_seen->listed_at    building+beds+price          47-05 CENTER BOULEVARD, Long Islan #807 $6,575
+
 == lead time ==
   measured               152
-  pending                8220
-  excluded_mixed_basis   343
+  pending                8264
+  excluded_mixed_basis   344
   median_hours           2.0
   mean_hours             -78.3
   p10_hours              -492.3
@@ -30,7 +33,7 @@ implausible      21  (> 60d apart -- probably not the same apartment)
   share_ahead_24h        0.092
   share_ahead_72h        0.079
   basis                  {'first_seen->first_seen': 89, 'listed_at->listed_at': 63}
-  vs                     {'nybits': 495}
+  vs                     {'nybits': 496}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
