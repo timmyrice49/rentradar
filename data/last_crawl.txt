@@ -1,43 +1,40 @@
-last_run: 2026-11-26T05:22:51Z
-commit: 7fc44c77bd1c0870cab70c6ecd89ade155043970
+last_run: 2026-11-26T15:41:11Z
+commit: 9f99146dd6fb866db6712397e1d5db4aa7a57303
 
 source                        ok   raw   new   upd  gone  nogeo
 --------------------------------------------------------------
 stonehenge                     y    10     0     0     0      0
 nyc_housing_connect            y    45     0     0     0      4
-nybits                         y   290     2     0     2      0
-tfcornerstone                  y   123    17     6    21     26
-stuytown                       y   100     0     4     0      0
+nybits                         y   289    20     5    26      0
+tfcornerstone                  y   123     0     0     0     26
+stuytown                       y   100     0    10     0      0
 rockrose                       y    46     0     0     0      0
 
-geocoder: 614 cached, 0 fetched, 0 failed, 0 below threshold
+geocoder: 613 cached, 0 fetched, 0 failed, 0 below threshold
 
-pairs found      468  (348 on an exact rent match)
-newly recorded   5
-already measured 439
+pairs found      469  (353 on an exact rent match)
+newly recorded   2
+already measured 445
 unusable         0
-implausible      24  (> 60d apart -- probably not the same apartment)
+implausible      22  (> 60d apart -- probably not the same apartment)
 
      lead  basis                    match                        listing
-  -298.7h  listed_at->first_seen    building+beds+price          340 EAST 34 STREET, New York, NY,  #11L $5,020
-  -298.7h  listed_at->first_seen    building+beds+near-price     606 WEST 57 STREET, New York, NY,  #735 $3,650
- -1140.0h  listed_at->first_seen    building+beds+near-price     505 WEST 37 STREET, New York, NY,  #1502 $5,185
- -1308.3h  listed_at->listed_at     building+beds+near-price     4610 CENTER BOULEVARD, Long Island #2417 $4,295
- -1308.3h  listed_at->listed_at     building+beds+near-price     340 EAST 34 STREET, New York, NY,  #9D $5,085
+    12.2h  listed_at->listed_at     building+beds+price          505 WEST 37 STREET, New York, NY,  #210 $4,885
+    12.2h  listed_at->listed_at     building+beds+price          33 BOND STREET, Brooklyn, NY, USA #1701 $4,560
 
 == lead time ==
-  measured               154
-  pending                8278
+  measured               156
+  pending                8296
   excluded_mixed_basis   347
   median_hours           2.0
-  mean_hours             -94.2
+  mean_hours             -92.9
   p10_hours              -514.0
-  p90_hours              11.5
-  share_ahead            0.61
-  share_ahead_24h        0.091
-  share_ahead_72h        0.078
-  basis                  {'first_seen->first_seen': 89, 'listed_at->listed_at': 65}
-  vs                     {'nybits': 501}
+  p90_hours              12.2
+  share_ahead            0.615
+  share_ahead_24h        0.09
+  share_ahead_72h        0.077
+  basis                  {'first_seen->first_seen': 89, 'listed_at->listed_at': 67}
+  vs                     {'nybits': 503}
   caveat                 None
 
 Note: this measures lead over the aggregators listed above, not over StreetEasy.
